@@ -9,8 +9,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="private_executors.css" />
+ <link rel="stylesheet" href="styles/base.css" />
+     <link rel="stylesheet" href="styles/dialogs.css" />
+    <link rel="stylesheet" href="styles/arbitrage_manager.css" />
   </head>
   <body>
     <nav class="navigation">
@@ -20,36 +21,31 @@
         <li data-target="why-us">Чому саме ми?</li>
         <li data-target="about">Про нас</li>
         <li data-target="contacts">Контакти</li>
-        <li>
-          <a
-            style="color: #327aff; text-decoration: none"
-            href="private_executors.html"
-            >Для приватних виконавців</a
-          >
-        </li>
-        <li>
-          <a style="color: #fe4f4f; text-decoration: none" href="index.html"
-            >Оцінка майна</a
-          >
-        </li>
+
       </ul>
     </nav>
-
+<div class="tabs-container">
+  <div class="tabs-wrapper">
+    <a href="index.html" class="tab-item ">
+      Оцінка майна
+    </a>
+    <a href="private_executors.html" class="tab-item">
+      Для приватних виконавців
+    </a>
+    <a href="arbitrage_manager.html" class="tab-item active">
+      Для арбітражних керуючих
+    </a>
+    <a href="banks.html" class="tab-item">
+      Для банків
+    </a>
+  </div>
+</div>
     <div class="container">
       <div class="site">
         <header class="header">
           <div class="branding">
             <div class="logo">Оцінка майна для арбітражного керуючого</div>
-            <div class="tagline">
-              Оцінка майна в рамках процедур банкрутства
-              <span class="info-btn"><i class="fas fa-info-circle"></i></span>
-              <div class="info-tooltip">
-                Надаємо об’єктивну і юридично бездоганну оцінку майна для
-                процедур банкрутства та ліквідації. Наші висновки відповідають
-                вимогам закону і забезпечують безпеку дій арбітражного
-                керуючого.
-              </div>
-            </div>
+          
           </div>
           <div class="contacts">
             <div class="contact-item">
@@ -127,7 +123,31 @@
               </div>
             </div>
           </div>
-
+<section class="partners-section" id="partners">
+  <h2>Наші партнери</h2>
+  
+  <div class="partners-grid">
+    <div class="partner-card">
+      <img src="assets/partners/collect.png" alt="collect">
+      <h3>ТОВ "КОЛЛЕКТ ЦЕНТР"</h3>
+    </div>
+    
+    <div class="partner-card">
+      <img src="assets/partners/fp.png" alt="factoring">
+      <h3>FactoringPartners</h3>
+    </div>
+    
+    <div class="partner-card">
+      <img src="assets//partners/orangePark.svg" alt="orangePark">
+      <h3>OrangePark</h3>
+    </div>
+    
+    <div class="partner-card">
+      <img src="assets/partner-4.jpg" alt="Партнер">
+      <h3>Партнер</h3>
+    </div>
+  </div>
+</section>
           <div class="section" id="advantages">
             <h2>Переваги для арбітражних керуючих</h2>
             <ul id="advantage-list">
@@ -349,18 +369,12 @@
 
     <script src="index.js"></script>
     <script>
-      const infoBtn = document.querySelector(".info-btn");
       const infoTooltip = document.querySelector(".info-tooltip");
       const serviceBtn = document.querySelectorAll(".service-button");
       const serviceDialog = document.getElementById("service-dialog");
       const closeButton = document.querySelector(".close-button");
 
-      infoBtn.addEventListener("mouseover", function (event) {
-        event.stopPropagation();
-        infoTooltip.style.display =
-          infoTooltip.style.display === "block" ? "none" : "block";
-      });
-
+     
       document.addEventListener("mouseout", function () {
         infoTooltip.style.display = "none";
       });
