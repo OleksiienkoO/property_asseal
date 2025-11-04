@@ -35,13 +35,47 @@
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Inter",
+    "Segoe UI",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #dbeafe 100%);
   color: var(--text-color);
   line-height: 1.7;
   min-height: 100vh;
   padding: 20px;
   overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background-image: url("../assets/wallpaler.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  z-index: -2;
+  pointer-events: none;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 /* ============================================
@@ -50,7 +84,7 @@ body {
 .container {
   width: 100%;
   max-width: 1280px;
-  margin: 90px auto 20px;
+  margin: 50px auto 20px;
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -79,16 +113,24 @@ body {
   border-bottom: 1px solid rgba(37, 99, 235, 0.1);
 }
 
+.navigation-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
 .navigation-list {
   display: flex;
   justify-content: center;
   align-items: center;
   list-style: none;
   gap: 8px;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 20px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .navigation-list li {
@@ -104,7 +146,11 @@ body {
 }
 
 .navigation-list li.active {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
   transform: translateY(0);
@@ -123,7 +169,11 @@ body {
 }
 
 .navigation-list li:hover {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   box-shadow: var(--shadow-md);
 }
@@ -133,8 +183,44 @@ body {
   color: inherit;
 }
 
+/* КОНТАКТИ В НАВІГАЦІЇ */
+.navigation-contacts {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: white;
+  border-radius: 8px;
+  border: 2px solid var(--medium-gray);
+  transition: var(--transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.nav-contact-item:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-contact-item i {
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+.nav-contact-item span {
+  font-weight: 600;
+  color: var(--text-color);
+  font-size: 14px;
+}
+
 /* ============================================
-   TABS NAVIGATION (ТАБУЛЯЦІЯ)
+   TABS NAVIGATION (ТАБУЛЯЦІЯ) - ВИПРАВЛЕНО
    ============================================ */
 .tabs-container {
   position: sticky;
@@ -143,15 +229,18 @@ body {
   border-bottom: 2px solid #e2e8f0;
   z-index: 999;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 0;
 }
 
 .tabs-wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
   display: flex;
   justify-content: center;
   gap: 0;
-  padding: 0 20px;
+  padding: 0;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -164,7 +253,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px 32px;
+  padding: 35px 32px 0;
   color: #64748b;
   text-decoration: none;
   font-weight: 600;
@@ -201,28 +290,30 @@ body {
 }
 
 /* ============================================
-   HEADER
+   HEADER - БЕЗ КОНТАКТІВ
    ============================================ */
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  padding: 40px;
+  padding: 0 40px;
   background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
   border-bottom: 2px solid var(--medium-gray);
-  gap: 30px;
 }
 
 .branding {
-  flex: 1;
-  min-width: 300px;
+  text-align: center;
+  max-width: 900px;
 }
 
 .logo {
   font-size: 42px;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -232,8 +323,13 @@ body {
 }
 
 @keyframes shimmer {
-  0%, 100% { filter: brightness(1); }
-  50% { filter: brightness(1.2); }
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
 }
 
 .tagline {
@@ -253,130 +349,29 @@ body {
   transform: translateY(-50%);
   width: 4px;
   height: 80%;
-  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    180deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   border-radius: 2px;
 }
 
-.contacts {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 18px;
-  background: white;
-  border-radius: 12px;
-  border: 2px solid var(--medium-gray);
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
-  transform: translateX(-4px);
-  transition: var(--transition);
-}
-
-.contact-item:hover {
-  border-color: var(--primary-color);
-  box-shadow: var(--shadow-md);
-}
-
-.contact-item:hover::before {
-  transform: translateX(0);
-}
-
-.contact-item i {
-  font-size: 20px;
-  color: var(--primary-color);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(30, 64, 175, 0.1));
-  border-radius: 10px;
-  transition: var(--transition);
-}
-
-.contact-item:hover i {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.phone,
-.email {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--text-color);
-  transition: var(--transition);
-  position: relative;
-}
-
-.phone:hover,
-.email:hover {
-  color: var(--primary-color);
-}
-
-.copy-tooltip {
-  position: absolute;
-  background: var(--dark-color);
-  color: white;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 12px;
-  opacity: 0;
-  transition: var(--transition);
-  pointer-events: none;
-  white-space: nowrap;
-  top: -45px;
-  left: 50%;
-  transform: translateX(-50%) translateY(5px);
-  box-shadow: var(--shadow-md);
-}
-
-.copy-tooltip::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid var(--dark-color);
-}
-
-.phone:hover .copy-tooltip,
-.email:hover .copy-tooltip {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
+/* ВИДАЛЕНО .contacts - вони тепер в навігації */
 
 /* ============================================
    MAIN CONTENT
    ============================================ */
 .main-content {
-  padding: 40px;
+  padding: 30px 40px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 }
 
 .section {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  padding: 40px;
+  padding: 30px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-md);
   transition: var(--transition);
@@ -393,7 +388,11 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   transform: scaleX(0);
   transition: var(--transition);
 }
@@ -406,19 +405,21 @@ body {
   font-size: 32px;
   font-weight: 800;
   color: var(--dark-color);
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   position: relative;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 }
 
 .section h2::after {
   content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
+
   width: 80px;
   height: 5px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   border-radius: 3px;
 }
 
@@ -426,7 +427,11 @@ body {
    FOOTER
    ============================================ */
 .footer {
-  background: linear-gradient(135deg, var(--dark-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--dark-color),
+    var(--secondary-color)
+  );
   color: white;
   text-align: center;
   padding: 30px;
@@ -456,7 +461,11 @@ body {
    UTILITY CLASSES
    ============================================ */
 .text-gradient {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -1,85 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Експертна оцінка майна - Для банків</title>
+    <title>Оцінка.Експерт</title>
     <link rel="icon" href="assets/icon.png" type="image/png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
- <link rel="stylesheet" href="styles/base.css" />
-     <link rel="stylesheet" href="styles/dialogs.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/dialogs.css" />
     <link rel="stylesheet" href="styles/banks.css" />
-    
   </head>
   <body>
     <nav class="navigation">
-      <ul class="navigation-list" style="gap: 10px">
-        <li><a style="color: inherit; text-decoration: none" href="index.html">Головна</a></li>
-        <li data-target="services">Наші послуги</li>
-        <li data-target="why-us">Чому саме ми?</li>
-        <li data-target="advantages">Переваги</li>
-        <li data-target="about">Про нас</li>
-        <li data-target="contacts">Контакти</li>
-      </ul>
+      <div class="navigation-container">
+        <img src="./assets/logo.png" height="40vh" />
+        <!-- Ліва частина - меню навігації -->
+        <ul class="navigation-list">
+          <li data-target="services">Наші послуги</li>
+          <li data-target="partners">Наші партнери</li>
+          <li data-target="why-us">Чому саме ми?</li>
+          <li data-target="advantages">Переваги</li>
+
+          <li data-target="about">Про нас</li>
+        </ul>
+
+        <!-- Права частина - контакти -->
+        <div class="navigation-contacts">
+          <div class="nav-contact-item">
+            <i class="fas fa-phone"></i>
+            <span>(093) 45-19-023</span>
+          </div>
+          <div class="nav-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>expertna_ocinka_maina@urk.net</span>
+          </div>
+        </div>
+      </div>
     </nav>
     <div class="tabs-container">
-  <div class="tabs-wrapper">
-    <a href="index.html" class="tab-item ">
-      Оцінка майна
-    </a>
-    <a href="private_executors.html" class="tab-item">
-      Для приватних виконавців
-    </a>
-    <a href="arbitrage_manager.html" class="tab-item">
-      Для арбітражних керуючих
-    </a>
-    <a href="banks.html" class="tab-item active">
-      Для банків
-    </a>
-  </div>
-</div>
+      <div class="tabs-wrapper">
+        <a href="index.html" class="tab-item"> Оцінка майна </a>
+        <a href="private_executors.html" class="tab-item">
+          Для приватних виконавців
+        </a>
+        <a href="arbitrage_manager.html" class="tab-item">
+          Для арбітражних керуючих
+        </a>
+        <a href="banks.html" class="tab-item active"> Для банків </a>
+      </div>
+    </div>
 
     <div class="container">
       <div class="site">
         <header class="header">
           <div class="branding">
-            <div class="logo">Експертна оцінка</div>
-     
-          </div>
-          <div class="contacts">
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <span class="phone"
-                >(093) 45-19-023
-                <div class="copy-tooltip">Скопіювати</div>
-              </span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <span class="email"
-                >exprertna_ocinka_maina@urk.net
-                <div class="copy-tooltip">Скопіювати</div>
-              </span>
-            </div>
+            <div class="logo">Оцінка майна для банків</div>
           </div>
         </header>
 
         <main class="main-content">
           <div class="section" id="services">
             <h2>Послуги для банків</h2>
-            <p style="font-size: 16px; color: #64748b; margin-bottom: 30px;">
-              Ми надаємо повний спектр послуг з оцінки майна для банківських установ, 
-              допомагаючи приймати обґрунтовані рішення щодо кредитування та роботи з проблемною заборгованістю.
+            <p style="font-size: 16px; color: #64748b; margin-bottom: 30px">
+              Ми надаємо повний спектр послуг з оцінки майна для банківських
+              установ, допомагаючи приймати обґрунтовані рішення щодо
+              кредитування та роботи з проблемною заборгованістю.
             </p>
 
             <div class="services-grid">
               <div class="service-card">
                 <div class="service-image">
                   <img
-                    src="./assets/services/collateral.jpg"
+                    src="./assets//banks/calculate_estate.png"
                     alt="Оцінка застав"
                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22240%22%3E%3Crect fill=%22%23e0f2fe%22 width=%22400%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%232563eb%22%3E%D0%9E%D1%86%D1%96%D0%BD%D0%BA%D0%B0 %D0%B7%D0%B0%D1%81%D1%82%D0%B0%D0%B2%3C/text%3E%3C/svg%3E'"
                   />
@@ -88,9 +83,10 @@
                   <h3 class="service-title">
                     Оцінка застав при видачі кредитів
                   </h3>
-                  <p style="color: #64748b; line-height: 1.7;">
-                    Професійна оцінка майна для визначення застави при кредитуванні. 
-                    Допомагаємо мінімізувати кредитні ризики банку.
+                  <p style="color: #64748b; line-height: 1.7">
+                    Професійна оцінка майна для визначення застави при
+                    кредитуванні. Допомагаємо мінімізувати кредитні ризики
+                    банку.
                   </p>
                   <ul class="service-docs">
                     <li>Нерухоме майно (квартири, будинки, офіси)</li>
@@ -99,26 +95,24 @@
                     <li>Транспортні засоби</li>
                     <li>Обладнання та техніка</li>
                   </ul>
-                  <div class="service-price">Від 2200 грн.</div>
-                  <a  class="service-button">Замовити послугу</a>
+                  <div class="service-price">Від 2000 грн.</div>
+                  <a class="service-button">Замовити послугу</a>
                 </div>
               </div>
 
               <div class="service-card">
                 <div class="service-image">
                   <img
-                    src="./assets/services/debtor.jpg"
+                    src="./assets/banks/estate_debitor.png"
                     alt="Оцінка майна боржників"
                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22240%22%3E%3Crect fill=%22%23dbeafe%22 width=%22400%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%231e40af%22%3E%D0%9C%D0%B0%D0%B9%D0%BD%D0%BE %D0%B1%D0%BE%D1%80%D0%B6%D0%BD%D0%B8%D0%BA%D1%96%D0%B2%3C/text%3E%3C/svg%3E'"
                   />
                 </div>
                 <div class="service-content">
-                  <h3 class="service-title">
-                    Оцінка майна боржників
-                  </h3>
-                  <p style="color: #64748b; line-height: 1.7;">
-                    Визначення ринкової вартості майна боржників для стягнення заборгованості 
-                    та прийняття управлінських рішень.
+                  <h3 class="service-title">Оцінка майна боржників</h3>
+                  <p style="color: #64748b; line-height: 1.7">
+                    Визначення ринкової вартості майна боржників для стягнення
+                    заборгованості та прийняття управлінських рішень.
                   </p>
                   <ul class="service-docs">
                     <li>Інвентаризація майна боржника</li>
@@ -127,7 +121,7 @@
                     <li>Експрес-оцінка для швидких рішень</li>
                     <li>Повний звіт для службової роботи</li>
                   </ul>
-                  <div class="service-price">Від 2500 грн.</div>
+                  <div class="service-price">Від 2000 грн.</div>
                   <a class="service-button">Замовити послугу</a>
                 </div>
               </div>
@@ -135,7 +129,7 @@
               <div class="service-card">
                 <div class="service-image">
                   <img
-                    src="./assets/services/court.jpg"
+                    src="./assets/banks/court_reports.png"
                     alt="Звіти для суду"
                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22240%22%3E%3Crect fill=%22%23f0f9ff%22 width=%22400%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%232563eb%22%3E%D0%A1%D1%83%D0%B4%D0%BE%D0%B2%D1%96 %D0%B7%D0%B2%D1%96%D1%82%D0%B8%3C/text%3E%3C/svg%3E'"
                   />
@@ -144,9 +138,9 @@
                   <h3 class="service-title">
                     Підготовка звітів для судових справ
                   </h3>
-                  <p style="color: #64748b; line-height: 1.7;">
-                    Професійні звіти про оцінку майна, що відповідають вимогам судів 
-                    та законодавства України.
+                  <p style="color: #64748b; line-height: 1.7">
+                    Професійні звіти про оцінку майна, що відповідають вимогам
+                    судів та законодавства України.
                   </p>
                   <ul class="service-docs">
                     <li>Звіти для судових процесів</li>
@@ -155,60 +149,72 @@
                     <li>Звіти для платформи СЕТАМ</li>
                     <li>Супровід до реалізації майна</li>
                   </ul>
-                  <div class="service-price">Від 3000 грн.</div>
-                  <a  class="service-button">Замовити послугу</a>
+                  <div class="service-price">Від 2000 грн.</div>
+                  <a class="service-button">Замовити послугу</a>
                 </div>
               </div>
             </div>
-<section class="partners-section" id="partners">
-  <h2>Наші партнери</h2>
-  
-  <div class="partners-grid">
-    <div class="partner-card">
-      <img src="assets/partners/collect.png" alt="collect">
-      <h3>ТОВ "КОЛЛЕКТ ЦЕНТР"</h3>
-    </div>
-    
-    <div class="partner-card">
-      <img src="assets/partners/fp.png" alt="factoring">
-      <h3>FactoringPartners</h3>
-    </div>
-    
-    <div class="partner-card">
-      <img src="assets//partners/orangePark.svg" alt="orangePark">
-      <h3>OrangePark</h3>
-    </div>
-    
-    <div class="partner-card">
-      <img src="assets/partner-4.jpg" alt="Партнер">
-      <h3>Партнер</h3>
-    </div>
-  </div>
-</section>
-            <div style="margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #eff6ff, #dbeafe); border-radius: 16px; border-left: 4px solid #2563eb;">
-              <h3 style="color: #1e40af; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-info-circle"></i>
-                Додаткові послуги для банків
-              </h3>
-              <ul style="list-style: none; padding: 0; display: grid; gap: 12px;">
-                <li style="display: flex; align-items: start; gap: 12px; color: #475569;">
-                  <i class="fas fa-check-circle" style="color: #2563eb; margin-top: 4px; flex-shrink: 0;"></i>
-                  <span>Консультації щодо формування заставного портфелю</span>
-                </li>
-                <li style="display: flex; align-items: start; gap: 12px; color: #475569;">
-                  <i class="fas fa-check-circle" style="color: #2563eb; margin-top: 4px; flex-shrink: 0;"></i>
-                  <span>Моніторинг вартості застав протягом дії кредиту</span>
-                </li>
-                <li style="display: flex; align-items: start; gap: 12px; color: #475569;">
-                  <i class="fas fa-check-circle" style="color: #2563eb; margin-top: 4px; flex-shrink: 0;"></i>
-                  <span>Експрес-оцінка для термінових рішень (1-2 дні)</span>
-                </li>
-                <li style="display: flex; align-items: start; gap: 12px; color: #475569;">
-                  <i class="fas fa-check-circle" style="color: #2563eb; margin-top: 4px; flex-shrink: 0;"></i>
-                  <span>Підготовка документації для реалізації майна</span>
-                </li>
-              </ul>
-            </div>
+            <section class="section partners-section" id="partners">
+              <h2>Наші партнери</h2>
+
+              <div class="partners-grid">
+                <a href="https://collect-center.com.ua/" target="_blank"
+                  ><div class="partner-card">
+                    <img src="assets/partners/collect.png" alt="collect" />ТОВ
+                    "КОЛЛЕКТ ЦЕНТР"
+                  </div></a
+                >
+                <a href="https://factoringp.ua/" target="_blank"
+                  ><div class="partner-card">
+                    <img
+                      src="assets/partners/fp.png"
+                      alt="factoringPartners"
+                    />FactoringPartners
+                  </div></a
+                >
+
+                <!--поменять link-->
+                <a href="https://factoringp.ua/" target="_blank"
+                  ><div class="partner-card">
+                    <img
+                      src="assets/partners/OzymandiaLogo.png"
+                      alt="ozymandia"
+                    />OZYMANDIA
+                  </div></a
+                >
+              </div>
+
+              <div class="ispolniteli">
+                <h5>Виконавці</h5>
+                <div class="ispolniteli-grid">
+                  <div class="ispolnitel-card">
+                    <a
+                      href="https://ispolnitel.dp.ua/ruseczka-oksana/"
+                      target="_blank"
+                    >
+                      Русецька Оксана
+                    </a>
+                  </div>
+                  <!-- Поменять ссылки -->
+                  <div class="ispolnitel-card">
+                    <a href="https://factoringpartners.com" target="_blank">
+                      Русецька Оксана
+                    </a>
+                  </div>
+
+                  <div class="ispolnitel-card">
+                    <a href="https://ozymandia.com" target="_blank">
+                      Русецька Оксана
+                    </a>
+                  </div>
+                  <div class="ispolnitel-card">
+                    <a href="https://ozymandia.com" target="_blank">
+                      Русецька Оксана
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
 
           <div class="section whyUs" id="why-us">
@@ -290,42 +296,48 @@
             <div class="about-content">
               <h2>Чому банки обирають нас</h2>
               <p>
-                Ми розуміємо специфіку роботи банківських установ і знаємо, наскільки важливою є 
-                швидкість та точність оцінки для прийняття кредитних рішень. Наша команда має 
-                багаторічний досвід співпраці з провідними банками України.
+                Ми розуміємо специфіку роботи банківських установ і знаємо,
+                наскільки важливою є швидкість та точність оцінки для прийняття
+                кредитних рішень. Наша команда має багаторічний досвід співпраці
+                з провідними банками України.
               </p>
 
               <div class="mission-block">
                 <p>
-                  Наша місія у роботі з банками – надавати точні та обґрунтовані оціночні висновки, 
-                  які допомагають мінімізувати кредитні ризики та приймати виважені рішення щодо 
-                  заставного майна та роботи з проблемною заборгованістю.
+                  Наша місія у роботі з банками – надавати точні та обґрунтовані
+                  оціночні висновки, які допомагають мінімізувати кредитні
+                  ризики та приймати виважені рішення щодо заставного майна та
+                  роботи з проблемною заборгованістю.
                 </p>
               </div>
 
               <p>
-                Ми працюємо відповідно до вимог Національного банку України, міжнародних стандартів 
-                оцінки та внутрішніх регламентів банківських установ. Наші звіти визнаються всіма 
-                банками України та державними органами.
+                Ми працюємо відповідно до вимог Національного банку України,
+                міжнародних стандартів оцінки та внутрішніх регламентів
+                банківських установ. Наші звіти визнаються всіма банками України
+                та державними органами.
               </p>
 
               <div class="values-list">
                 <div class="value-item">
                   <h3>Швидкість</h3>
                   <p>
-                    Розуміємо важливість термінів. Експрес-оцінка за 1-2 дні для термінових рішень
+                    Розуміємо важливість термінів. Експрес-оцінка за 1-2 дні для
+                    термінових рішень
                   </p>
                 </div>
                 <div class="value-item">
                   <h3>Надійність</h3>
                   <p>
-                    Страхування професійної відповідальності та гарантія якості наших звітів
+                    Страхування професійної відповідальності та гарантія якості
+                    наших звітів
                   </p>
                 </div>
                 <div class="value-item">
                   <h3>Досвід</h3>
                   <p>
-                    Понад 13 років успішної співпраці з банківськими установами України
+                    Понад 13 років успішної співпраці з банківськими установами
+                    України
                   </p>
                 </div>
               </div>
@@ -338,8 +350,9 @@
 
           <section class="contact-section" id="contacts">
             <h2>Зв'яжіться з нами</h2>
-            <p style="font-size: 16px; color: #64748b; margin-bottom: 30px;">
-              Готові відповісти на всі ваші питання та надати консультацію щодо оцінки майна для банківських потреб
+            <p style="font-size: 16px; color: #64748b; margin-bottom: 30px">
+              Готові відповісти на всі ваші питання та надати консультацію щодо
+              оцінки майна для банківських потреб
             </p>
 
             <div class="contact-info">
@@ -419,7 +432,7 @@
         </div>
       </div>
     </dialog>
-    
+
     <script src="index.js"></script>
   </body>
 </html>

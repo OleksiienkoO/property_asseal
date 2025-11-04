@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Оцінка майна для приватних виконавців</title>
+    <title>Оцінка.Експерт</title>
     <link rel="icon" href="assets/icon.png" type="image/png" />
     <link
       rel="stylesheet"
@@ -14,16 +14,32 @@
     <link rel="stylesheet" href="styles/private_executors.css" />
   </head>
   <body>
-    <nav class="navigation">
+<nav class="navigation">
+
+    <div class="navigation-container">
+     <img src="./assets/logo.png" height="40vh">
       <ul class="navigation-list">
         <li data-target="services">Наші послуги</li>
+              <li data-target="partners">Наші партнери</li>
+     
         <li data-target="advantages">Переваги</li>
-        <li data-target="why-us">Чому саме ми?</li>
+         <li data-target="why-us">Чому саме ми?</li>
         <li data-target="about">Про нас</li>
-        <li data-target="contacts">Контакти</li>
-
       </ul>
-    </nav>
+      
+      <!-- Права частина - контакти -->
+      <div class="navigation-contacts">
+        <div class="nav-contact-item">
+          <i class="fas fa-phone"></i>
+          <span>(093) 45-19-023</span>
+        </div>
+        <div class="nav-contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>expertna_ocinka_maina@urk.net</span>
+        </div>
+      </div>
+    </div>
+  </nav>
 <div class="tabs-container">
   <div class="tabs-wrapper">
     <a href="index.html" class="tab-item">
@@ -47,22 +63,7 @@
           <div class="branding">
             <div class="logo">Оцінка майна для приватних виконавців</div>
           </div>
-          <div class="contacts">
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <span class="phone"
-                >(093) 45-19-023
-                <div class="copy-tooltip">Скопіювати</div>
-              </span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <span class="email"
-                >expertna_ocinka_maina@urk.net
-                <div class="copy-tooltip">Скопіювати</div>
-              </span>
-            </div>
-          </div>
+
         </header>
 
         <main class="main-content">
@@ -82,7 +83,7 @@
                     Оцінка нерухомості, земельних ділянок, транспортних засобів
                     та іншого майна
                   </h3>
-                  <div class="service-price">2200 грн.</div>
+                  <div class="service-price">2000 грн.</div>
                   <a class="service-button">Замовити оцінку</a>
                 </div>
               </div>
@@ -100,7 +101,7 @@
                     може бути використаний у виконавчому провадженні
                   </h3>
 
-                  <div class="service-price">2200 грн.</div>
+                  <div class="service-price">2000 грн.</div>
                   <a class="service-button">Замовити оцінку</a>
                 </div>
               </div>
@@ -117,7 +118,7 @@
                     вигляді і друкованому
                   </h3>
 
-                  <div class="service-price">2200 грн.</div>
+                  <div class="service-price">2000 грн.</div>
                   <a class="service-button">Замовити оцінку</a>
                 </div>
               </div>
@@ -134,37 +135,73 @@
                     оцінки.
                   </h3>
 
-                  <div class="service-price">2200 грн.</div>
+                  <div class="service-price">2000 грн.</div>
                   <a class="service-button">Замовити оцінку</a>
                 </div>
               </div>
             </div>
           </div>
-<section class="partners-section" id="partners">
-  <h2>Наші партнери</h2>
-  
-  <div class="partners-grid">
-    <div class="partner-card">
-      <img src="assets/partners/collect.png" alt="collect">
-      <h3>ТОВ "КОЛЛЕКТ ЦЕНТР"</h3>
-    </div>
-    
-    <div class="partner-card">
-      <img src="assets/partners/fp.png" alt="factoring">
-      <h3>FactoringPartners</h3>
-    </div>
-    
-    <div class="partner-card">
-      <img src="assets//partners/orangePark.svg" alt="orangePark">
-      <h3>OrangePark</h3>
-    </div>
-    
-    <div class="partner-card">
-      <img src="assets/partner-4.jpg" alt="Партнер">
-      <h3>Партнер</h3>
-    </div>
-  </div>
-</section>
+          <section class="section partners-section" id="partners">
+            <h2>Наші партнери</h2>
+
+            <div class="partners-grid">
+              <a href="https://collect-center.com.ua/" target="_blank"
+                ><div class="partner-card">
+                  <img src="assets/partners/collect.png" alt="collect" />ТОВ
+                  "КОЛЛЕКТ ЦЕНТР"
+                </div></a
+              >
+              <a href="https://factoringp.ua/" target="_blank"
+                ><div class="partner-card">
+                  <img
+                    src="assets/partners/fp.png"
+                    alt="factoringPartners"
+                  />FactoringPartners
+                </div></a
+              >
+
+              <!--поменять link-->
+              <a href="https://factoringp.ua/" target="_blank"
+                ><div class="partner-card">
+                  <img
+                    src="assets/partners/OzymandiaLogo.png"
+                    alt="ozymandia"
+                  />OZYMANDIA
+                </div></a
+              >
+            </div>
+
+            <div class="ispolniteli">
+              <h5>Виконавці</h5>
+              <div class="ispolniteli-grid">
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ispolnitel.dp.ua/ruseczka-oksana/"
+                    target="_blank"
+                  >
+                    Русецька Оксана
+                  </a>
+                </div>
+                <!-- Поменять ссылки -->
+                <div class="ispolnitel-card">
+                  <a href="https://factoringpartners.com" target="_blank">
+                    Русецька Оксана
+                  </a>
+                </div>
+
+                <div class="ispolnitel-card">
+                  <a href="https://ozymandia.com" target="_blank">
+                    Русецька Оксана
+                  </a>
+                </div>
+                <div class="ispolnitel-card">
+                  <a href="https://ozymandia.com" target="_blank">
+                    Русецька Оксана
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
           <div class="section" id="advantages">
             <h2>Переваги для приватних виконавців</h2>
             <ul id="advantage-list">
