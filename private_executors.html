@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
@@ -9,61 +9,54 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-   <link rel="stylesheet" href="styles/base.css" />
-     <link rel="stylesheet" href="styles/dialogs.css" />
+    <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/private_executors.css" />
     <link rel="stylesheet" href="styles/responsive.css" />
+    <link rel="stylesheet" href="styles/dialogs.css" />
   </head>
   <body>
-<nav class="navigation">
+    <nav class="navigation">
+      <div class="navigation-container">
+        <img src="./assets/logo.png" height="50vh" />
+        <ul class="navigation-list">
+          <li data-target="services">Наші послуги</li>
+          <li data-target="partners">Наші партнери</li>
 
-    <div class="navigation-container">
-     <img src="./assets/logo.png" height="50vh">
-      <ul class="navigation-list">
-        <li data-target="services">Наші послуги</li>
-              <li data-target="partners">Наші партнери</li>
-     
-        <li data-target="advantages">Переваги</li>
-         <li data-target="why-us">Чому саме ми?</li>
-        <li data-target="about">Про нас</li>
-      </ul>
-      
-      <div class="navigation-contacts">
-        <div class="nav-contact-item">
-          <i class="fas fa-phone"></i>
-          <span>(093) 45-19-023</span>
-        </div>
-        <div class="nav-contact-item">
-          <i class="fas fa-envelope"></i>
-          <span>expert365@ukr.net</span>
+          <li data-target="advantages">Переваги</li>
+          <li data-target="why-us">Чому саме ми?</li>
+          <li data-target="about">Про нас</li>
+        </ul>
+
+        <div class="navigation-contacts">
+          <div class="nav-contact-item">
+            <i class="fas fa-phone"></i>
+            <span>(093) 45-19-023</span>
+          </div>
+          <div class="nav-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>expert365@ukr.net</span>
+          </div>
         </div>
       </div>
+    </nav>
+    <div class="tabs-container">
+      <div class="tabs-wrapper">
+        <a href="index.html" class="tab-item"> Оцінка майна </a>
+        <a href="private_executors.html" class="tab-item active">
+          Для приватних виконавців
+        </a>
+        <a href="arbitrage_manager.html" class="tab-item">
+          Для арбітражних керуючих
+        </a>
+        <a href="banks.html" class="tab-item"> Для банків </a>
+      </div>
     </div>
-  </nav>
-<div class="tabs-container">
-  <div class="tabs-wrapper">
-    <a href="index.html" class="tab-item">
-      Оцінка майна
-    </a>
-    <a href="private_executors.html" class="tab-item active">
-      Для приватних виконавців
-    </a>
-    <a href="arbitrage_manager.html" class="tab-item">
-      Для арбітражних керуючих
-    </a>
-    <a href="banks.html" class="tab-item">
-      Для банків
-    </a>
-  </div>
-</div>
-</div>
     <div class="container">
       <div class="site">
         <header class="header">
           <div class="branding">
             <div class="logo">Оцінка майна для приватних виконавців</div>
           </div>
-
         </header>
 
         <main class="main-content">
@@ -160,8 +153,6 @@
                 </div></a
               >
 
-
-        
               <a href="https://factoringp.ua/" target="_blank"
                 ><div class="partner-card">
                   <img
@@ -175,22 +166,28 @@
             <div class="ispolniteli">
               <h5>Виконавці</h5>
               <div class="ispolniteli-grid">
-                     <div class="ispolnitel-card">
+                <div class="ispolnitel-card">
                   <a
                     href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-bileckij-igor-mironovich.html"
                     target="_blank"
                   >
-                  Білецький Ігор Миронович
+                    Білецький Ігор Миронович
                   </a>
                 </div>
                 <div class="ispolnitel-card">
-                  <a href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-oshurko-mikola-mikolajovich.html" target="_blank">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-oshurko-mikola-mikolajovich.html"
+                    target="_blank"
+                  >
                     Ошурко Микола Миколайович
                   </a>
                 </div>
 
                 <div class="ispolnitel-card">
-                  <a href="https://borgu.net.ua/pv/vinnica/dumanska-al.html" target="_blank">
+                  <a
+                    href="https://borgu.net.ua/pv/vinnica/dumanska-al.html"
+                    target="_blank"
+                  >
                     Думанська Аліна Леонідівна
                   </a>
                 </div>
@@ -346,7 +343,7 @@
                 <i class="fas fa-envelope"></i>
                 <div class="info-content">
                   <h3>Email</h3>
-       <p class="email">expert365@ukr.net</p>
+                  <p class="email">expert365@ukr.net</p>
                 </div>
               </div>
 
@@ -411,40 +408,129 @@
       </div>
     </dialog>
 
-    <script type="module" src="/index.js"></script>
     <script>
-      const infoTooltip = document.querySelector(".info-tooltip");
-      const serviceBtn = document.querySelectorAll(".service-button");
-      const serviceDialog = document.getElementById("service-dialog");
-      const closeButton = document.querySelector(".close-button");
-
-    
-
-      document.addEventListener("mouseout", function () {
-        infoTooltip.style.display = "none";
+      document.addEventListener("DOMContentLoaded", function () {
+        initNavigation();
+        initServiceDialog();
+        initTabsScroll();
+        initScrollBehavior();
       });
+      function initNavigation() {
+        const navItems = document.querySelectorAll(".navigation-list li");
 
-      serviceBtn.forEach((btn) => {
-        btn.addEventListener("click", function (event) {
-          serviceDialog.showModal();
+        navItems.forEach((item) => {
+          item.addEventListener("click", function (e) {
+            if (e.target.tagName === "A") return;
+
+            const targetId = this.getAttribute("data-target");
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+              navItems.forEach((nav) => nav.classList.remove("active"));
+              this.classList.add("active");
+
+              const offsetTop = targetSection.offsetTop - 100;
+
+              window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth",
+              });
+            }
+          });
         });
-      });
 
-      closeButton.addEventListener("click", function () {
-        serviceDialog.close();
-      });
+        window.addEventListener("scroll", highlightActiveSection);
 
-      serviceDialog.addEventListener("click", function (event) {
-        const rect = serviceDialog.getBoundingClientRect();
-        if (
-          event.clientX < rect.left ||
-          event.clientX > rect.right ||
-          event.clientY < rect.top ||
-          event.clientY > rect.bottom
-        ) {
-          serviceDialog.close();
+        requestAnimationFrame(() => {
+          setTimeout(highlightActiveSection, 50);
+        });
+      }
+
+      function highlightActiveSection() {
+        const sections = document.querySelectorAll(
+          ".section[id], .about-section[id], .contact-section[id], .partners-section[id]"
+        );
+        const navItems = document.querySelectorAll(
+          ".navigation-list li[data-target]"
+        );
+
+        if (!sections.length || !navItems.length) {
+          return;
         }
-      });
+
+        let current = "";
+        const scrollPosition = window.pageYOffset + 200;
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          const sectionBottom = sectionTop + sectionHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            current = section.getAttribute("id");
+          }
+        });
+        if (!current && scrollPosition < 300) {
+          current = sections[0].getAttribute("id");
+        }
+
+        navItems.forEach((item) => {
+          item.classList.remove("active");
+          const target = item.getAttribute("data-target");
+          if (target === current) {
+            item.classList.add("active");
+          }
+        });
+      }
+
+      function initServiceDialog() {
+        const serviceButtons = document.querySelectorAll(".service-button");
+        const serviceDialog = document.getElementById("service-dialog");
+        const closeButton = document.querySelector(".close-button");
+
+        if (!serviceDialog) {
+          return;
+        }
+
+        serviceButtons.forEach((btn) => {
+          btn.addEventListener("click", function (event) {
+            event.preventDefault();
+            serviceDialog.showModal();
+            document.body.classList.add("dialog-open");
+
+            serviceDialog.style.animation = "dialogFadeIn 0.3s ease-out";
+          });
+        });
+
+        if (closeButton) {
+          closeButton.addEventListener("click", function () {
+            closeDialog();
+          });
+        }
+
+        serviceDialog.addEventListener("click", function (event) {
+          const rect = serviceDialog.getBoundingClientRect();
+          if (
+            event.clientX < rect.left ||
+            event.clientX > rect.right ||
+            event.clientY < rect.top ||
+            event.clientY > rect.bottom
+          ) {
+            closeDialog();
+          }
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && serviceDialog.open) {
+            closeDialog();
+          }
+        });
+
+        function closeDialog() {
+          serviceDialog.close();
+          document.body.classList.remove("dialog-open");
+        }
+      }
     </script>
   </body>
 </html>

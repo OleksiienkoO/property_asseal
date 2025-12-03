@@ -10,10 +10,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="styles/base.css" />
-    <link rel="stylesheet" href="styles/dialogs.css" />
     <link rel="stylesheet" href="styles/arbitrage_manager.css" />
     <link rel="stylesheet" href="styles/responsive.css" />
-
+    <link rel="stylesheet" href="styles/dialogs.css" />
   </head>
   <body>
     <nav class="navigation">
@@ -394,38 +393,129 @@
         </div>
       </div>
     </dialog>
-    <script type="module" src="/index.js"></script>
     <script>
-      const infoTooltip = document.querySelector(".info-tooltip");
-      const serviceBtn = document.querySelectorAll(".service-button");
-      const serviceDialog = document.getElementById("service-dialog");
-      const closeButton = document.querySelector(".close-button");
-
-      document.addEventListener("mouseout", function () {
-        infoTooltip.style.display = "none";
+      document.addEventListener("DOMContentLoaded", function () {
+        initNavigation();
+        initServiceDialog();
+        initTabsScroll();
+        initScrollBehavior();
       });
+      function initNavigation() {
+        const navItems = document.querySelectorAll(".navigation-list li");
 
-      serviceBtn.forEach((btn) => {
-        btn.addEventListener("click", function (event) {
-          serviceDialog.showModal();
+        navItems.forEach((item) => {
+          item.addEventListener("click", function (e) {
+            if (e.target.tagName === "A") return;
+
+            const targetId = this.getAttribute("data-target");
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+              navItems.forEach((nav) => nav.classList.remove("active"));
+              this.classList.add("active");
+
+              const offsetTop = targetSection.offsetTop - 100;
+
+              window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth",
+              });
+            }
+          });
         });
-      });
 
-      closeButton.addEventListener("click", function () {
-        serviceDialog.close();
-      });
+        window.addEventListener("scroll", highlightActiveSection);
 
-      serviceDialog.addEventListener("click", function (event) {
-        const rect = serviceDialog.getBoundingClientRect();
-        if (
-          event.clientX < rect.left ||
-          event.clientX > rect.right ||
-          event.clientY < rect.top ||
-          event.clientY > rect.bottom
-        ) {
-          serviceDialog.close();
+        requestAnimationFrame(() => {
+          setTimeout(highlightActiveSection, 50);
+        });
+      }
+
+      function highlightActiveSection() {
+        const sections = document.querySelectorAll(
+          ".section[id], .about-section[id], .contact-section[id], .partners-section[id]"
+        );
+        const navItems = document.querySelectorAll(
+          ".navigation-list li[data-target]"
+        );
+
+        if (!sections.length || !navItems.length) {
+          return;
         }
-      });
+
+        let current = "";
+        const scrollPosition = window.pageYOffset + 200;
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          const sectionBottom = sectionTop + sectionHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            current = section.getAttribute("id");
+          }
+        });
+        if (!current && scrollPosition < 300) {
+          current = sections[0].getAttribute("id");
+        }
+
+        navItems.forEach((item) => {
+          item.classList.remove("active");
+          const target = item.getAttribute("data-target");
+          if (target === current) {
+            item.classList.add("active");
+          }
+        });
+      }
+
+      function initServiceDialog() {
+        const serviceButtons = document.querySelectorAll(".service-button");
+        const serviceDialog = document.getElementById("service-dialog");
+        const closeButton = document.querySelector(".close-button");
+
+        if (!serviceDialog) {
+          return;
+        }
+
+        serviceButtons.forEach((btn) => {
+          btn.addEventListener("click", function (event) {
+            event.preventDefault();
+            serviceDialog.showModal();
+            document.body.classList.add("dialog-open");
+
+            serviceDialog.style.animation = "dialogFadeIn 0.3s ease-out";
+          });
+        });
+
+        if (closeButton) {
+          closeButton.addEventListener("click", function () {
+            closeDialog();
+          });
+        }
+
+        serviceDialog.addEventListener("click", function (event) {
+          const rect = serviceDialog.getBoundingClientRect();
+          if (
+            event.clientX < rect.left ||
+            event.clientX > rect.right ||
+            event.clientY < rect.top ||
+            event.clientY > rect.bottom
+          ) {
+            closeDialog();
+          }
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && serviceDialog.open) {
+            closeDialog();
+          }
+        });
+
+        function closeDialog() {
+          serviceDialog.close();
+          document.body.classList.remove("dialog-open");
+        }
+      }
     </script>
   </body>
 </html>
