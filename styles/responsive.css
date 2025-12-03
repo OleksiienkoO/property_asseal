@@ -1,0 +1,1495 @@
+/* ============================================
+   АДАПТИВНІ СТИЛІ ДЛЯ ВСІХ СТОРІНОК
+   Файл: responsive.css
+   Підключати останнім після всіх інших CSS
+   ============================================ */
+
+/* ============================================
+   DESKTOP (1280px і більше) - базові стилі
+   ============================================ */
+
+/* ============================================
+   LAPTOP (1024px - 1279px)
+   ============================================ */
+@media (max-width: 1279px) {
+  .container {
+    max-width: 1024px;
+    margin: 40px auto 20px;
+  }
+
+  .navigation-container {
+    max-width: 1024px;
+    padding: 0 20px;
+  }
+
+  .main-content {
+    padding: 25px 30px;
+  }
+
+  .section {
+    padding: 25px;
+  }
+
+  .logo {
+    font-size: 36px;
+  }
+
+  .about-section {
+    gap: 25px;
+  }
+
+  .about-image {
+    font-size: 22px;
+    min-height: 280px;
+  }
+}
+
+/* ============================================
+   TABLET (768px - 1023px)
+   ============================================ */
+@media (max-width: 1023px) {
+  body {
+    padding: 15px;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 115px auto 15px;
+  }
+
+  /* NAVIGATION */
+  .navigation {
+    padding: 12px 0;
+  }
+
+  .navigation-container {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 15px;
+  }
+
+  .navigation-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .navigation-list li {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+
+  /* ПРИХОВУЄМО КОНТАКТИ */
+  .navigation-contacts {
+    display: none !important;
+  }
+
+  /* TABS - STICKY ЯК НА DESKTOP */
+  .tabs-container {
+    top: 120px;
+  }
+
+  .tabs-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 15px;
+  }
+
+  .tab-item {
+    font-size: 13px;
+    padding: 18px 20px 15px;
+    flex: 0 1 auto;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 25px 20px;
+  }
+
+  .logo {
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 14px;
+  }
+
+  /* MAIN CONTENT */
+  .main-content {
+    padding: 20px 25px;
+    gap: 25px;
+  }
+
+  .section {
+    padding: 20px;
+    scroll-margin-top: 120px;
+  }
+
+  .section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  /* SERVICES GRID */
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+  }
+
+  .service-card {
+    max-width: 100%;
+  }
+
+  .service-image {
+    height: 160px;
+  }
+
+  .service-content {
+    padding: 18px;
+  }
+
+  .service-title {
+    font-size: 18px;
+  }
+
+  .service-price {
+    font-size: 24px;
+  }
+
+  .service-button {
+    padding: 11px 20px;
+    font-size: 14px;
+  }
+
+  /* PARTNERS */
+  .partners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-items: normal;
+  }
+
+  .partner-card {
+    width: 150px;
+    padding: 20px;
+  }
+
+  .partner-card img {
+    width: 90px;
+  }
+
+  .ispolniteli-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  /* WHY US */
+  .whyUs {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .reason {
+    padding: 12px;
+  }
+
+  /* ADVANTAGES */
+  #advantage-list li {
+    padding: 14px 16px 14px 48px;
+  }
+
+  #advantage-list li::before {
+    left: 14px;
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+
+  /* ABOUT SECTION */
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-image {
+    font-size: 24px;
+    min-height: 200px;
+    padding: 40px 25px;
+    position: static;
+  }
+
+  .mission-block {
+    padding: 18px;
+  }
+
+  .mission-block p {
+    font-size: 15px;
+  }
+
+  .values-list {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+  }
+
+  .value-item {
+    padding: 18px;
+  }
+
+  /* CONTACT INFO */
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .info-item {
+    padding: 18px;
+  }
+
+  /* DIALOG */
+  #service-dialog {
+    max-width: 90%;
+    width: 90%;
+  }
+
+  .dialog-content {
+    padding: 30px;
+  }
+
+  .dialog-header h2 {
+    font-size: 24px;
+  }
+
+  .close-button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .contact-item-dialog {
+    padding: 18px;
+  }
+
+  .contact-item-dialog i {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .call-button {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 25px;
+  }
+}
+
+/* ============================================
+   MOBILE LARGE (576px - 767px)
+   ============================================ */
+@media (max-width: 767px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    margin: 100px auto 10px;
+  }
+
+  /* NAVIGATION */
+  .navigation {
+    padding: 10px 0;
+  }
+
+  .navigation-container {
+    padding: 0 10px;
+    gap: 12px;
+  }
+
+  .navigation-container img {
+    height: 40px;
+  }
+
+  .navigation-list {
+    gap: 5px;
+  }
+
+  .navigation-list li {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  /* КОНТАКТИ ПРИХОВАНІ */
+  .navigation-contacts {
+    display: none !important;
+  }
+
+  /* TABS - STICKY З WRAP */
+  .tabs-container {
+    top: 98px;
+  }
+
+  .tabs-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 10px;
+  }
+
+  .tab-item {
+    font-size: 12px;
+    padding: 16px 18px 13px;
+    flex: 0 1 auto;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 20px 15px;
+  }
+
+  .logo {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .tagline {
+    font-size: 13px;
+    padding-left: 15px;
+  }
+
+  .tagline::before {
+    width: 3px;
+  }
+
+  /* MAIN CONTENT */
+  .main-content {
+    padding: 18px 15px;
+    gap: 20px;
+  }
+
+  .section {
+    padding: 18px;
+    border-radius: 10px;
+    scroll-margin-top: 130px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+  }
+
+  .section h2::after {
+    width: 60px;
+    height: 4px;
+  }
+
+  /* SERVICES GRID */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .service-image {
+    height: 140px;
+  }
+
+  .service-content {
+    padding: 15px;
+  }
+
+  .service-title {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .service-content p {
+    font-size: 13px;
+  }
+
+  .service-docs {
+    margin: 10px 0;
+  }
+
+  .service-docs li {
+    font-size: 12px;
+    padding: 5px 0;
+    padding-left: 20px;
+  }
+
+  .service-docs li::before {
+    font-size: 12px;
+  }
+
+  .service-price {
+    font-size: 22px;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .service-button {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  /* PARTNERS */
+  .partners-section {
+    padding: 18px;
+  }
+
+  .partners-section h2 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .partners-section h2::after {
+    width: 60px;
+    height: 4px;
+    margin: 15px auto 0;
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+  }
+
+  .partner-card {
+    width: 130px;
+    padding: 18px;
+  }
+
+  .partner-card img {
+    width: 75px;
+    margin-bottom: 10px;
+  }
+
+  .partners-grid a {
+    font-size: 12px;
+  }
+
+  .ispolniteli h5 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
+
+  .ispolniteli-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ispolnitel-card a {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .ispolnitel-card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* WHY US */
+  .whyUs h2 {
+    font-size: 22px;
+  }
+
+  .reason {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .reason i {
+    font-size: 16px;
+  }
+
+  /* ADVANTAGES */
+  #advantage-list {
+    gap: 12px;
+  }
+
+  #advantage-list li {
+    padding: 12px 14px 12px 44px;
+    font-size: 14px;
+  }
+
+  #advantage-list li::before {
+    left: 12px;
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  /* ABOUT SECTION */
+  .about-content p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .mission-block {
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .mission-block p {
+    font-size: 14px;
+  }
+
+  .about-image {
+    font-size: 20px;
+    min-height: 160px;
+    padding: 30px 20px;
+    border-radius: 10px;
+  }
+
+  .values-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .value-item {
+    padding: 15px;
+  }
+
+  .value-item h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .value-item p {
+    font-size: 13px;
+  }
+
+  /* CONTACT INFO */
+  .contact-section h2 {
+    font-size: 24px;
+  }
+
+  .info-item {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .info-item i {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .info-content h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .info-content p {
+    font-size: 13px;
+  }
+
+  /* DIALOG */
+  #service-dialog {
+    max-width: 95%;
+    width: 95%;
+    border-radius: 18px;
+  }
+
+  .dialog-content {
+    padding: 25px;
+  }
+
+  .dialog-header {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+
+  .dialog-header h2 {
+    font-size: 22px;
+  }
+
+  .dialog-header::after {
+    width: 60px;
+    height: 3px;
+  }
+
+  .close-button {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .contact-info-dialog {
+    gap: 12px;
+  }
+
+  .contact-item-dialog {
+    padding: 15px;
+    gap: 15px;
+    border-radius: 12px;
+  }
+
+  .contact-item-dialog i {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .contact-item-dialog .info-content h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .contact-item-dialog .info-content p {
+    font-size: 13px;
+  }
+
+  .call-button {
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+
+  .call-button i {
+    font-size: 18px;
+  }
+
+  .additional-info {
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  /* COPY NOTIFICATION */
+  .copy-notification {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+
+  .copy-notification i {
+    font-size: 16px;
+  }
+
+  /* SCROLL TO TOP */
+  .scroll-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .scroll-to-top i {
+    font-size: 18px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 575px) {
+  body {
+    padding: 5px;
+  }
+
+  body::before {
+    background-size: 200% auto;
+  }
+
+  .container {
+    margin: 90px auto 5px;
+  }
+
+  .site {
+    border-radius: 16px;
+  }
+
+  /* NAVIGATION */
+  .navigation {
+    padding: 8px 0;
+  }
+
+  .navigation-container {
+    gap: 10px;
+    padding: 0 8px;
+  }
+
+  .navigation-container img {
+    height: 35px;
+  }
+
+  .navigation-list {
+    width: 100%;
+    gap: 4px;
+  }
+
+  .navigation-list li {
+    font-size: 11px;
+    padding: 7px 10px;
+    border-radius: 8px;
+  }
+
+  /* КОНТАКТИ ПРИХОВАНІ */
+  .navigation-contacts {
+    display: none !important;
+  }
+
+  /* TABS - STICKY З WRAP */
+  .tabs-container {
+    top: 85px;
+  }
+
+  .tabs-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 8px;
+  }
+
+  .tab-item {
+    font-size: 11px;
+    padding: 14px 15px 11px;
+    flex: 0 1 auto;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 18px 12px;
+  }
+
+  .logo {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .tagline {
+    font-size: 12px;
+    padding-left: 12px;
+  }
+
+  /* MAIN CONTENT */
+  .main-content {
+    padding: 15px 12px;
+    gap: 18px;
+  }
+
+  .section {
+    padding: 15px;
+    border-radius: 8px;
+    scroll-margin-top: 120px;
+  }
+
+  .section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  .section h2::after {
+    width: 50px;
+    height: 3px;
+  }
+
+  /* SERVICES GRID */
+  .service-image {
+    height: 120px;
+  }
+
+  .service-content {
+    padding: 12px;
+  }
+
+  .service-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .service-content p {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .service-docs {
+    margin: 8px 0;
+  }
+
+  .service-docs li {
+    font-size: 11px;
+    padding: 4px 0;
+    padding-left: 18px;
+  }
+
+  .service-price {
+    font-size: 20px;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 8px;
+  }
+
+  .service-button {
+    padding: 9px 16px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  /* PARTNERS */
+  .partners-section {
+    padding: 15px;
+  }
+
+  .partners-section h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .partners-section h2::after {
+    width: 50px;
+    height: 3px;
+    margin: 12px auto 0;
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .partner-card {
+    width: 100%;
+    padding: 15px;
+    aspect-ratio: 1;
+  }
+
+  .partner-card img {
+    width: 60px;
+    margin-bottom: 8px;
+  }
+
+  .partners-grid a {
+    font-size: 11px;
+  }
+
+  .ispolniteli h5 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    margin-top: 25px;
+  }
+
+  .ispolniteli-grid {
+    gap: 10px;
+  }
+
+  .ispolnitel-card a {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .ispolnitel-card img {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* WHY US */
+  .whyUs h2 {
+    font-size: 20px;
+  }
+
+  .reason {
+    padding: 8px;
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .reason i {
+    font-size: 14px;
+  }
+
+  /* ADVANTAGES */
+  #advantage-list {
+    gap: 10px;
+  }
+
+  #advantage-list li {
+    padding: 10px 12px 10px 40px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+
+  #advantage-list li::before {
+    left: 10px;
+    width: 22px;
+    height: 22px;
+    font-size: 11px;
+  }
+
+  /* ABOUT SECTION */
+  .about-content p {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .mission-block {
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+  }
+
+  .mission-block p {
+    font-size: 13px;
+  }
+
+  .about-image {
+    font-size: 18px;
+    min-height: 140px;
+    padding: 25px 15px;
+    border-radius: 8px;
+  }
+
+  .values-list {
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .value-item {
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .value-item h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .value-item p {
+    font-size: 12px;
+  }
+
+  /* CONTACT INFO */
+  .contact-section h2 {
+    font-size: 22px;
+  }
+
+  .contact-info {
+    gap: 12px;
+  }
+
+  .info-item {
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+  }
+
+  .info-item i {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  .info-content h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .info-content p {
+    font-size: 12px;
+  }
+
+  /* DIALOG */
+  #service-dialog {
+    max-width: 98%;
+    width: 98%;
+    border-radius: 14px;
+  }
+
+  .dialog-content {
+    padding: 20px;
+  }
+
+  .dialog-header {
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+  }
+
+  .dialog-header h2 {
+    font-size: 20px;
+  }
+
+  .dialog-header::after {
+    width: 50px;
+    height: 3px;
+  }
+
+  .close-button {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .contact-info-dialog {
+    gap: 10px;
+  }
+
+  .contact-item-dialog {
+    padding: 12px;
+    gap: 12px;
+    border-radius: 10px;
+  }
+
+  .contact-item-dialog::before {
+    width: 3px;
+  }
+
+  .contact-item-dialog i {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  .contact-item-dialog .info-content h3 {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .contact-item-dialog .info-content p {
+    font-size: 12px;
+  }
+
+  .call-button {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  .call-button i {
+    font-size: 16px;
+  }
+
+  .additional-info {
+    margin-top: 12px;
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  /* COPY NOTIFICATION */
+  .copy-notification {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 15px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .copy-notification i {
+    font-size: 14px;
+  }
+
+  /* SCROLL TO TOP */
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .scroll-to-top i {
+    font-size: 16px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 18px;
+    font-size: 12px;
+  }
+}
+
+/* ============================================
+   MOBILE EXTRA SMALL (до 380px)
+   ============================================ */
+@media (max-width: 380px) {
+  .navigation-list li {
+    font-size: 10px;
+    padding: 6px 8px;
+  }
+
+  .nav-contact-item {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+
+  .tab-item {
+    font-size: 10px;
+    padding: 12px 12px;
+    min-width: 100px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .tagline {
+    font-size: 11px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+  }
+
+  .service-title {
+    font-size: 15px;
+  }
+
+  .service-price {
+    font-size: 18px;
+  }
+
+  .partners-section h2 {
+    font-size: 22px;
+  }
+
+  .partner-card img {
+    width: 50px;
+  }
+
+  .partners-grid a {
+    font-size: 10px;
+  }
+
+  .about-image {
+    font-size: 16px;
+    min-height: 120px;
+  }
+
+  .dialog-header h2 {
+    font-size: 18px;
+  }
+
+  .close-button {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
+
+/* ============================================
+   LANDSCAPE MODE (горизонтальна орієнтація)
+   ============================================ */
+@media (max-height: 600px) and (orientation: landscape) {
+  .about-image {
+    position: static;
+    min-height: 150px;
+  }
+
+  .navigation {
+    padding: 8px 0;
+  }
+
+  .tabs-container {
+    top: 80px;
+  }
+
+  .tab-item {
+    padding: 12px 15px;
+  }
+
+  .section {
+    scroll-margin-top: 140px;
+  }
+}
+
+/* ============================================
+   PRINT STYLES (для друку)
+   ============================================ */
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  .navigation,
+  .tabs-container,
+  .service-button,
+  .call-button,
+  .scroll-to-top,
+  .copy-notification,
+  #service-dialog {
+    display: none !important;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .site {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .section {
+    page-break-inside: avoid;
+    box-shadow: none;
+  }
+
+  .service-card {
+    page-break-inside: avoid;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY (доступність)
+   ============================================ */
+
+/* Високий контраст */
+@media (prefers-contrast: high) {
+  .service-card,
+  .partner-card,
+  .info-item,
+  .value-item {
+    border: 2px solid #000;
+  }
+
+  .service-button,
+  .call-button {
+    border: 2px solid #000;
+  }
+}
+
+/* Зменшена анімація */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .service-card:hover,
+  .partner-card:hover,
+  .reason:hover,
+  #advantage-list li:hover,
+  .value-item:hover,
+  .info-item:hover {
+    transform: none;
+  }
+}
+
+/* Темна тема */
+@media (prefers-color-scheme: dark) {
+  /* Базові темні кольори можна додати тут за потреби */
+  /* Наразі сайт використовує світлу тему */
+}
+
+/* ============================================
+   JS INTERACTION STYLES (стилі для JS взаємодії)
+   ============================================ */
+
+/* Navigation active state при скролі */
+.navigation-list li.active {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+/* Tabs active state */
+.tab-item.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+  background: #eff6ff;
+  font-weight: 700;
+}
+
+/* Dialog animations */
+@keyframes dialogFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+#service-dialog[open] {
+  animation: dialogFadeIn 0.3s ease-out;
+}
+
+/* Body overflow hidden при відкритому діалозі */
+body.dialog-open {
+  overflow: hidden;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent scroll when dialog is open */
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+/* ============================================
+   LOADING STATES (стани завантаження)
+   ============================================ */
+
+/* Skeleton loading для зображень */
+.service-image img {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+}
+
+.service-image img:not([src]),
+.service-image img[src=""] {
+  animation: shimmerLoad 1.5s infinite;
+}
+
+@keyframes shimmerLoad {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ============================================
+   FOCUS STYLES (стилі фокусу для доступності)
+   ============================================ */
+
+/* Покращені focus стилі для keyboard navigation */
+.service-button:focus,
+.call-button:focus,
+.close-button:focus,
+.tab-item:focus,
+.navigation-list li:focus {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Focus visible (тільки для keyboard) */
+.service-button:focus-visible,
+.call-button:focus-visible,
+.close-button:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.service-button:focus:not(:focus-visible),
+.call-button:focus:not(:focus-visible),
+.close-button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ============================================
+   HOVER ENHANCEMENTS (покращення hover)
+   ============================================ */
+
+/* Тільки на пристроях з hover підтримкою */
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .partner-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .value-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .info-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .reason:hover {
+    transform: translateX(8px);
+  }
+}
+
+/* На touch пристроях прибираємо hover ефекти */
+@media (hover: none) {
+  .service-card:hover,
+  .partner-card:hover,
+  .value-item:hover,
+  .info-item:hover,
+  .reason:hover {
+    transform: none;
+  }
+}
+
+/* ============================================
+   SCROLL INDICATOR (індикатор скролу для табів)
+   ============================================ */
+
+/* Градієнти для позначення скролу */
+.tabs-wrapper {
+  position: relative;
+}
+
+.tabs-wrapper::before,
+.tabs-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tabs-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.tabs-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+.tabs-wrapper.can-scroll-left::before {
+  opacity: 1;
+}
+
+.tabs-wrapper.can-scroll-right::after {
+  opacity: 1;
+}
+
+/* Mobile: тільки показуємо індикатор справа */
+@media (max-width: 767px) {
+  .tabs-wrapper::before {
+    display: none;
+  }
+
+  .tabs-wrapper::after {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 460px) {
+  .tabs-container {
+    top: 120px;
+  }
+  .container {
+    margin: 125px auto 5px;
+  }
+}

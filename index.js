@@ -12,10 +12,15 @@ if (currentPage.includes("banks.html")) {
   import("./styles/index.css");
 }
 
+// Import responsive styles last
+import("./styles/responsive.css");
+
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM loaded, initializing...");
   initNavigation();
   initServiceDialog();
+  initTabsScroll();
+  initScrollBehavior();
 });
 
 function initNavigation() {
@@ -103,11 +108,7 @@ function initServiceDialog() {
   const serviceDialog = document.getElementById("service-dialog");
   const closeButton = document.querySelector(".close-button");
 
-  console.log("Service buttons found:", serviceButtons.length);
-  console.log("Service dialog found:", !!serviceDialog);
-
   if (!serviceDialog) {
-    console.error("Service dialog not found!");
     return;
   }
 
@@ -116,7 +117,7 @@ function initServiceDialog() {
       event.preventDefault();
       console.log("Button clicked, opening dialog...");
       serviceDialog.showModal();
-      document.body.style.overflow = "hidden";
+      document.body.classList.add("dialog-open");
 
       serviceDialog.style.animation = "dialogFadeIn 0.3s ease-out";
     });
@@ -148,6 +149,194 @@ function initServiceDialog() {
 
   function closeDialog() {
     serviceDialog.close();
-    document.body.style.overflow = "auto";
+    document.body.classList.remove("dialog-open");
   }
 }
+
+// Нова функція для обробки скролу табів
+function initTabsScroll() {
+  const tabsWrapper = document.querySelector(".tabs-wrapper");
+
+  if (!tabsWrapper) {
+    console.log("Tabs wrapper not found");
+    return;
+  }
+
+  console.log("Initializing tabs scroll...");
+
+  // Функція для оновлення індикаторів скролу
+  function updateScrollIndicators() {
+    const canScrollLeft = tabsWrapper.scrollLeft > 0;
+    const canScrollRight =
+      tabsWrapper.scrollLeft <
+      tabsWrapper.scrollWidth - tabsWrapper.clientWidth - 1;
+
+    if (canScrollLeft) {
+      tabsWrapper.classList.add("can-scroll-left");
+    } else {
+      tabsWrapper.classList.remove("can-scroll-left");
+    }
+
+    if (canScrollRight) {
+      tabsWrapper.classList.add("can-scroll-right");
+    } else {
+      tabsWrapper.classList.remove("can-scroll-right");
+    }
+  }
+
+  // Слухаємо події скролу
+  tabsWrapper.addEventListener("scroll", updateScrollIndicators);
+
+  // Перевіряємо при завантаженні
+  updateScrollIndicators();
+
+  // Перевіряємо при зміні розміру вікна
+  window.addEventListener("resize", updateScrollIndicators);
+
+  // Прокручуємо до активного табу при завантаженні
+  const activeTab = tabsWrapper.querySelector(".tab-item.active");
+  if (activeTab) {
+    setTimeout(() => {
+      const tabRect = activeTab.getBoundingClientRect();
+      const wrapperRect = tabsWrapper.getBoundingClientRect();
+
+      // Якщо активний таб не видимий повністю
+      if (
+        tabRect.left < wrapperRect.left ||
+        tabRect.right > wrapperRect.right
+      ) {
+        activeTab.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
+      }
+    }, 100);
+  }
+
+  // Додаємо можливість свайпу на мобільних
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  tabsWrapper.addEventListener("mousedown", (e) => {
+    isDown = true;
+    tabsWrapper.style.cursor = "grabbing";
+    startX = e.pageX - tabsWrapper.offsetLeft;
+    scrollLeft = tabsWrapper.scrollLeft;
+  });
+
+  tabsWrapper.addEventListener("mouseleave", () => {
+    isDown = false;
+    tabsWrapper.style.cursor = "default";
+  });
+
+  tabsWrapper.addEventListener("mouseup", () => {
+    isDown = false;
+    tabsWrapper.style.cursor = "default";
+  });
+
+  tabsWrapper.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - tabsWrapper.offsetLeft;
+    const walk = (x - startX) * 2; // Швидкість скролу
+    tabsWrapper.scrollLeft = scrollLeft - walk;
+  });
+
+  console.log("Tabs scroll initialized");
+}
+
+// Нова функція для покращення поведінки скролу
+function initScrollBehavior() {
+  const navigation = document.querySelector(".navigation");
+
+  if (!navigation) return;
+
+  let lastScroll = 0;
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    // Додаємо клас при скролі
+    if (currentScroll > 50) {
+      navigation.classList.add("scrolled");
+    } else {
+      navigation.classList.remove("scrolled");
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  // Smooth scroll для всіх внутрішніх посилань
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href !== "#") {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
+    });
+  });
+}
+
+// Функція для lazy loading зображень
+function initLazyLoading() {
+  const images = document.querySelectorAll("img[loading='lazy']");
+
+  if ("IntersectionObserver" in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src || img.src;
+          img.classList.add("loaded");
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    images.forEach((img) => imageObserver.observe(img));
+  } else {
+    // Fallback для старих браузерів
+    images.forEach((img) => {
+      img.src = img.dataset.src || img.src;
+    });
+  }
+}
+
+// Викликаємо lazy loading після завантаження DOM
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initLazyLoading);
+} else {
+  initLazyLoading();
+}
+
+// Додаємо обробку помилок завантаження зображень
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll("img");
+
+  images.forEach((img) => {
+    img.addEventListener("error", function () {
+      console.warn("Failed to load image:", this.src);
+      // Можна додати placeholder зображення
+      this.style.background = "#f0f0f0";
+      this.alt = "Зображення недоступне";
+    });
+  });
+});
+
+// Експортуємо функції для можливого використання
+export {
+  initNavigation,
+  initServiceDialog,
+  initTabsScroll,
+  initScrollBehavior,
+  initLazyLoading,
+};

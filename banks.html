@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/dialogs.css" />
     <link rel="stylesheet" href="styles/banks.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
   </head>
   <body>
     <nav class="navigation">
@@ -426,5 +427,37 @@
     </dialog>
 
     <script type="module" src="/index.js"></script>
+    <script>
+      const infoTooltip = document.querySelector(".info-tooltip");
+      const serviceBtn = document.querySelectorAll(".service-button");
+      const serviceDialog = document.getElementById("service-dialog");
+      const closeButton = document.querySelector(".close-button");
+
+      document.addEventListener("mouseout", function () {
+        infoTooltip.style.display = "none";
+      });
+
+      serviceBtn.forEach((btn) => {
+        btn.addEventListener("click", function (event) {
+          serviceDialog.showModal();
+        });
+      });
+
+      closeButton.addEventListener("click", function () {
+        serviceDialog.close();
+      });
+
+      serviceDialog.addEventListener("click", function (event) {
+        const rect = serviceDialog.getBoundingClientRect();
+        if (
+          event.clientX < rect.left ||
+          event.clientX > rect.right ||
+          event.clientY < rect.top ||
+          event.clientY > rect.bottom
+        ) {
+          serviceDialog.close();
+        }
+      });
+    </script>
   </body>
 </html>
