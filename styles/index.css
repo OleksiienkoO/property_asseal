@@ -1,16 +1,44 @@
 /* ============================================
-   СТИЛІ ДЛЯ ГОЛОВНОЇ СТОРІНКИ
-   Файл: index-page.css
+   СТИЛІ ДЛЯ ГОЛОВНОЇ СТОРІНКИ (ОНОВЛЕНІ)
+   Файл: index_updated.css
    Підключати після base.css
+   Єдина синя колірна гама, ідентична private_executors
    ============================================ */
 
 /* ============================================
-   SERVICES GRID (ПОСЛУГИ) - ВИПРАВЛЕНО
+   INTRO SECTION (ВСТУП)
    ============================================ */
+
+.intro-content {
+  padding: 10px 0;
+}
+
+.intro-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-color);
+  text-align: justify;
+}
+
+.intro-text strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* ============================================
+   SERVICES GRID (ПОСЛУГИ)
+   ============================================ */
+.section-subtitle {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
 }
 
 .service-card {
@@ -33,7 +61,7 @@
 
 .service-image {
   width: 100%;
-  height: 180px;
+  height: 150px;
   overflow: hidden;
   position: relative;
   background: var(--light-gray);
@@ -51,14 +79,14 @@
 }
 
 .service-content {
-  padding: 20px;
+  padding: 18px;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .service-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--dark-color);
   margin-bottom: 12px;
@@ -66,10 +94,10 @@
 }
 
 .service-content p {
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--text-color);
   margin-bottom: 12px;
-  font-size: 14px;
-  line-height: 1.5;
 }
 
 .service-docs {
@@ -92,14 +120,13 @@
   content: "✓";
   position: absolute;
   left: 0;
-  color: var(--success-color);
+  color: var(--primary-color);
   font-weight: bold;
   font-size: 14px;
 }
 
-/* ПРИБИТТЯ ДО НИЗУ - ЦІНА ТА КНОПКА */
 .service-price {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
   color: var(--primary-color);
   margin: 12px 0;
@@ -119,7 +146,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: 12px 22px;
   background: linear-gradient(
     135deg,
     var(--primary-color),
@@ -129,7 +156,7 @@
   text-decoration: none;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   transition: var(--transition);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   cursor: pointer;
@@ -147,185 +174,417 @@
 }
 
 /* ============================================
-   WHY US SECTION (ЧОМУ МИ)
+   KEY FEATURES SECTION (КЛЮЧОВІ ПЕРЕВАГИ)
    ============================================ */
-.whyUs {
+.key-features-section {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 25px;
+  margin-top: 30px;
 }
 
-.reason-list {
-  list-style: none;
-  padding: 0;
-}
-
-.reason {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 14px;
-  margin-bottom: 10px;
+.feature-card {
   background: white;
-  border-radius: 10px;
-  transition: var(--transition);
-  box-shadow: var(--shadow-sm);
-}
-
-.reason:hover {
-  transform: translateX(8px);
-  box-shadow: var(--shadow-md);
-}
-
-.reason i {
-  font-size: 18px;
-  margin-top: 2px;
-  flex-shrink: 0;
-}
-/* ============================================
-   ADVANTAGES LIST (ПЕРЕВАГИ ДЛЯ БАНКІВ)
-   ============================================ */
-#advantage-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 14px;
-}
-
-#advantage-list li {
-  position: relative;
-  padding: 16px 18px 16px 52px;
-  background: white;
-  border-radius: 12px;
-  border-left: 4px solid var(--success-color);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: var(--transition);
-}
-
-#advantage-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 28px;
-  height: 28px;
-  background: linear-gradient(135deg, var(--success-color), #059669);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 14px;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-}
-
-#advantage-list li:hover {
-  transform: translateX(8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  border-left-color: #059669;
-}
-/* ============================================
-   ABOUT SECTION (ПРО НАС)
-   ============================================ */
-.about-section {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 35px;
-  align-items: start;
-}
-
-.about-content p {
-  color: var(--text-color);
-  line-height: 1.7;
-  margin-bottom: 18px;
-  font-size: 15px;
-}
-
-.mission-block {
-  background: linear-gradient(
-    135deg,
-    rgba(37, 99, 235, 0.1),
-    rgba(30, 64, 175, 0.05)
-  );
-  padding: 20px;
-  border-radius: 12px;
-  border-left: 4px solid var(--primary-color);
-  margin: 20px 0;
-}
-
-.mission-block p {
-  margin: 0;
-  font-weight: 600;
-  color: var(--dark-color);
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.values-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 18px;
-  margin-top: 25px;
-}
-
-.value-item {
-  padding: 20px;
-  background: white;
+  padding: 30px;
   border-radius: 12px;
   box-shadow: var(--shadow-md);
   transition: var(--transition);
   border: 2px solid transparent;
+  text-align: center;
 }
 
-.value-item:hover {
+.feature-card:hover {
   border-color: var(--primary-color);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
 
-.value-item h3 {
-  color: var(--primary-color);
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.value-item p {
-  color: var(--text-color);
-  font-size: 14px;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.about-image {
+.feature-icon {
+  width: 70px;
+  height: 70px;
   background: linear-gradient(
     135deg,
     var(--primary-color),
     var(--secondary-color)
   );
   color: white;
-  border-radius: var(--border-radius);
-  padding: 50px 35px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  font-size: 26px;
-  font-weight: 800;
-  line-height: 1.4;
-  min-height: 320px;
+  margin: 0 auto 20px;
+  font-size: 30px;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.feature-card p strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* ============================================
+   WHY CHOOSE SECTION (ГНУЧКІ УМОВИ) - В СТОВПЧИК
+   ============================================ */
+.why-choose-section {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.why-choose-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.why-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  border: 2px solid transparent;
+  display: flex;
+  gap: 40px;
+}
+
+.why-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
-  position: sticky;
-  top: 140px;
+}
+
+.why-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+  padding: 35px;
+}
+
+.why-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.why-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.closing-statement {
+  text-align: center;
+}
+
+.closing-statement p {
+  font-size: 18px;
+  color: var(--dark-color);
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.closing-statement strong {
+  color: var(--primary-color);
+  font-weight: 800;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: var(--transition);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  cursor: pointer;
+  border: none;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.5);
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+}
+
+/* ============================================
+   DOCUMENTS SECTION (ЮРИДИЧНИЙ ЗАХИСТ)
+   ============================================ */
+.documents-section {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.documents-intro {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.documents-intro strong {
+  color: var(--primary-color);
+}
+
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.document-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.document-item:hover {
+  border-color: var(--primary-color);
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.document-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.document-content h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 8px;
+}
+
+.document-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.document-content p strong {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* ============================================
+   PARTNERS SECTION (ПАРТНЕРИ)
+   ============================================ */
+.partners-section {
+  padding: 30px;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.partners-section h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--dark-color);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.partners-section h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  margin: 18px auto 0;
+  border-radius: 2px;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.partner-card {
+  width: 180px;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  overflow: hidden;
+  text-align: center;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.partner-card:hover {
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+.partner-card img {
+  max-width: 100%;
+  width: 105px;
+  max-height: 100%;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.partners-grid a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.ispolniteli-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ispolnitel-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.ispolniteli h5 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--dark-color);
+  margin-bottom: 20px;
+  margin-top: 40px;
+  position: relative;
+}
+
+.ispolnitel-card a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 1rem;
+  height: 100%;
+  transition: color 0.3s ease;
+}
+
+.ispolnitel-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.ispolnitel-card:hover {
+  background: #e0f2fe;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+  border-color: var(--primary-color);
+}
+
+.ispolnitel-card:hover img {
+  transform: scale(1.05);
+}
+
+.ispolnitel-card:hover a {
+  color: var(--primary-color);
 }
 
 /* ============================================
    CONTACT SECTION (КОНТАКТИ)
    ============================================ */
 .contact-section {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .contact-info {
@@ -385,172 +644,133 @@
 }
 
 /* ============================================
-   PARTNERS SECTION (ПАРТНЕРИ)
-   ============================================ */
-.partners-section {
-  padding: 10px;
-  background: #f8fafc;
-}
-
-.partners-section h2 {
-  text-align: center;
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--dark-color);
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.partners-section h2::after {
-  content: "";
-  display: block;
-  width: 70px;
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
-  margin: 18px auto 0;
-  border-radius: 2px;
-}
-
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-items: center;
-}
-
-.partner-card {
-  width: 180px;
-  background: white;
-  border-radius: 12px;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1;
-  overflow: hidden;
-  text-align: center;
-}
-
-.partner-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  transform: translateY(-5px);
-}
-
-.partner-card img {
-  max-width: 100%;
-  width: 105px;
-  max-height: 100%;
-  object-fit: contain;
-
-  margin-bottom: 12px;
-}
-
-.partners-grid a {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-color);
-  margin: 0;
-  line-height: 1.3;
-  text-decoration: none;
-}
-
-.ispolniteli-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.ispolnitel-card {
-  background: #f6f6f6;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  text-align: center;
-  overflow: hidden;
-}
-.ispolniteli h5 {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--dark-color);
-  margin-bottom: 20px;
-  margin-top: 40px;
-  position: relative;
-}
-
-.ispolnitel-card a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: #222;
-  font-weight: 600;
-  padding: 1rem;
-  height: 100%;
-  transition: color 0.3s ease;
-}
-
-.ispolnitel-card img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin-bottom: 0.5rem;
-  transition: transform 0.3s ease;
-}
-
-.ispolnitel-card:hover {
-  background: #e8f0fe;
-  transform: translateY(-4px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.ispolnitel-card:hover img {
-  transform: scale(1.05);
-}
-
-.ispolnitel-card:hover a {
-  color: #1a73e8;
-}
-
-/* ============================================
    COPY NOTIFICATION (ПОВІДОМЛЕННЯ)
    ============================================ */
 .copy-notification {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: linear-gradient(135deg, var(--success-color), #059669);
+  background: #4caf50;
   color: white;
-  padding: 14px 22px;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+  padding: 15px 25px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   opacity: 0;
-  visibility: hidden;
   transform: translateY(20px);
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  pointer-events: none;
   z-index: 10000;
-  font-weight: 600;
-  font-size: 14px;
 }
 
 .copy-notification.show {
   opacity: 1;
-  visibility: visible;
   transform: translateY(0);
 }
 
 .copy-notification i {
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.copy-notification span {
+  font-weight: 500;
+}
+
+/* ============================================
+   RESPONSIVE ADAPTATIONS
+   ============================================ */
+
+@media (max-width: 1023px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .intro-text {
+    font-size: 15px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-grid {
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 25px;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+  }
+
+  .documents-list {
+    gap: 15px;
+  }
+
+  .document-item {
+    padding: 15px;
+  }
+
+  .document-number {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .why-choose-grid {
+    gap: 20px;
+  }
+
+  .why-card {
+    padding: 25px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .why-icon {
+    padding: 25px;
+  }
+
+  .closing-statement p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .intro-text {
+    font-size: 14px;
+  }
+
+  .feature-card h3 {
+    font-size: 18px;
+  }
+
+  .document-content h4 {
+    font-size: 16px;
+  }
+
+  .why-card h3 {
+    font-size: 17px;
+  }
+
+  .closing-statement p {
+    font-size: 15px;
+  }
+
+  .cta-button {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
 }

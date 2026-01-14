@@ -3,28 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Експерт365</title>
+    <title>Експерт365 — Професійна оцінка майна 24/7</title>
     <link rel="icon" href="assets/icon.png" type="image/png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- ВАЖЛИВО: Порядок підключення CSS файлів -->
     <link rel="stylesheet" href="styles/base.css" />
+    <!-- 1. Базові стилі та змінні -->
     <link rel="stylesheet" href="styles/index.css" />
+    <!-- 2. Специфічні стилі сторінки -->
     <link rel="stylesheet" href="styles/responsive.css" />
+    <!-- 3. Адаптивність -->
     <link rel="stylesheet" href="styles/dialogs.css" />
+    <!-- 4. Діалоги та компоненти -->
   </head>
   <body>
     <nav class="navigation">
       <div class="navigation-container">
         <img src="./assets/logo.png" height="50vh" />
         <ul class="navigation-list">
-          <li data-target="services">Наші послуги</li>
-          <li data-target="partners">Наші партнери</li>
-          <li data-target="why-us">Чому саме ми?</li>
-          <li data-target="advantages">Переваги</li>
-
-          <li data-target="about">Про нас</li>
+          <li data-target="intro">Про нас</li>
+          <li data-target="services">Ключові напрямки</li>
+          <li data-target="why-choose">Чому ми?</li>
+          <li data-target="flexibility">Гнучкі умови</li>
+          <li data-target="legal">Юридичний захист</li>
+          <li data-target="partners">Партнери</li>
         </ul>
 
         <div class="navigation-contacts">
@@ -39,6 +44,7 @@
         </div>
       </div>
     </nav>
+
     <div class="tabs-container">
       <div class="tabs-wrapper">
         <a href="index.html" class="tab-item active"> Оцінка майна </a>
@@ -51,37 +57,59 @@
         <a href="banks.html" class="tab-item"> Для банків </a>
       </div>
     </div>
+
     <div class="container">
       <div class="site">
         <header class="header">
           <div class="branding">
-            <div class="logo">Експерт365</div>
+            <div class="logo">Експерт365 — Професійна оцінка майна</div>
+            <p>
+              Ваш надійний партнер у сфері незалежної оцінки. Працюємо щодня для
+              отримання точних звітів у найкоротші терміни
+            </p>
           </div>
         </header>
 
         <main class="main-content">
+          <!-- INTRO SECTION -->
+          <section class="section" id="intro">
+            <h2>Про Експерт365</h2>
+            <div class="intro-content">
+              <p class="intro-text">
+                <strong>Експерт365</strong> — це ваш надійний партнер у сфері
+                незалежної оцінки. Ми працюємо щодня, щоб ви отримували
+                <strong>точні звіти у найкоротші терміни</strong>. Наша команда
+                експертів має понад <strong>10 років досвіду</strong> на ринку
+                оціночних послуг та гарантує професійний підхід до кожного
+                замовлення.
+              </p>
+            </div>
+          </section>
+
+          <!-- SERVICES SECTION -->
           <div class="section" id="services">
-            <h2>Наші послуги</h2>
+            <h2>Наші ключові напрямки</h2>
 
             <div class="services-grid">
               <div class="service-card">
                 <div class="service-image">
                   <img
                     src="./assets/services/room.jpg"
-                    alt="[Фото для оцінки нерухомості]"
+                    alt="Оцінка нерухомості"
                   />
                 </div>
                 <div class="service-content">
-                  <h3 class="service-title">
-                    Оцінка Квартири, Будинку, Офіса, Приміщення, Кімнати
-                  </h3>
-                  <p>Для оцінки потрібно:</p>
+                  <h3 class="service-title">Нерухомість</h3>
+                  <p>
+                    Професійна оцінка квартир, будинків, земельних ділянок,
+                    офісів та комерційних приміщень для будь-яких цілей.
+                  </p>
                   <ul class="service-docs">
                     <li>Документи, що підтверджують право власності</li>
                     <li>Технічний паспорт БТІ</li>
                     <li>Копія паспорта (1-а, 2-а стор.)</li>
                   </ul>
-                  <div class="service-price">2000 грн.</div>
+
                   <a class="service-button">Замовити оцінку</a>
                 </div>
               </div>
@@ -90,52 +118,264 @@
                 <div class="service-image">
                   <img
                     src="./assets/services/land.jpg"
-                    alt="[Фото для оцінки земельних ділянок]"
+                    alt="Оцінка бізнесу та комерції"
                   />
                 </div>
                 <div class="service-content">
-                  <h3 class="service-title">Оцінка земельних ділянок</h3>
-                  <p>Для оцінки потрібно:</p>
+                  <h3 class="service-title">Бізнес та комерція</h3>
+                  <p>
+                    Оцінка офісів, складів, промислових об'єктів та комерційної
+                    нерухомості з урахуванням всіх ринкових факторів.
+                  </p>
                   <ul class="service-docs">
-                    <li>
-                      Витяг із земельного кадастру або державний акт про право
-                      власності на землю
-                    </li>
-                    <li>Копія паспорта (1-а, 2-а стор.)</li>
+                    <li>Правовстановлюючі документи на об'єкт</li>
+                    <li>Технічна документація</li>
+                    <li>Фінансові показники (за потреби)</li>
                   </ul>
-                  <div class="service-price">2000 грн.</div>
+
+                  <a class="service-button">Замовити оцінку</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-image">
+                  <img
+                    src="./assets/services/summary.jpg"
+                    alt="Оцінка транспорту та техніки"
+                  />
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">Транспорт та техніка</h3>
+                  <p>
+                    Експертна оцінка легкових автомобілів, вантажівок,
+                    спецтехніки та обладнання різного призначення.
+                  </p>
+                  <ul class="service-docs">
+                    <li>Свідоцтво про реєстрацію транспортного засобу</li>
+                    <li>Технічний паспорт</li>
+                    <li>Документи на обладнання (за наявності)</li>
+                  </ul>
+
                   <a class="service-button">Замовити оцінку</a>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- WHY CHOOSE SECTION -->
+          <section class="section key-features-section" id="why-choose">
+            <h2>Чому обирають Експерт365?</h2>
+
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Швидкість</h3>
+                <p>
+                  Ми цінуємо ваш час, тому готуємо звіти
+                  <strong>від 2-х годин до 1 робочого дня</strong>. Термінові
+                  замовлення виконуються в пріоритетному порядку.
+                </p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Повна легітимність</h3>
+                <p>
+                  За необхідності звіти реєструються в
+                  <strong>Єдиній базі ФДМУ</strong>
+                  та відповідають стандартам 2026 року. Юридична чистота
+                  гарантована.
+                </p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Цифрова зручність</h3>
+                <p>
+                  Замовляйте оцінку онлайн через
+                  <strong>Viber, Telegram або сайт</strong>. Отримуйте готовий
+                  звіт в цифровому форматі в день замовлення.
+                </p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>Досвідчена команда</h3>
+                <p>
+                  Наші експерти мають <strong>понад 10 років досвіду</strong> на
+                  ринку оціночних послуг та постійно підвищують кваліфікацію.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- FLEXIBILITY SECTION -->
+          <section class="section why-choose-section" id="flexibility">
+            <h2>Гнучкі умови та партнерство</h2>
+            <p class="section-subtitle">
+              В Експерт365 ми розуміємо, що кожен кейс унікальний, тому ми
+              завжди відкриті до діалогу та готові запропонувати найкращі умови
+              співпраці
+            </p>
+
+            <div class="why-choose-grid">
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-handshake"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Індивідуальний підхід</h3>
+                  <p>
+                    Ми максимально гнучкі у питаннях ціноутворення та термінів.
+                    Якщо у вас нестандартний об'єкт або особливі вимоги — ми
+                    знайдемо рішення, яке влаштує обидві сторони.
+                  </p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-percent"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Знижки на об'єми</h3>
+                  <p>
+                    Маєте пакет об'єктів або потребуєте регулярної оцінки? Для
+                    гуртових замовлень
+                    <strong>(від 3-х об'єктів одночасно)</strong> діє спеціальна
+                    система знижок до 20%.
+                  </p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Партнерська програма</h3>
+                  <p>
+                    Запрошуємо до співпраці банківські та фінансові установи,
+                    арбітражних керуючих та приватних виконавців. Готові
+                    обговорювати індивідуальні фінансові умови та надавати
+                    пріоритет у черзі виконання.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="closing-statement">
+              <p>
+                Маєте великий проєкт?
+                <strong>Напишіть нам прямо зараз</strong> — ми підготуємо
+                персональну комерційну пропозицію протягом 15 хвилин!
+              </p>
+              <a class="cta-button">Обговорити індивідуальну ціну</a>
+            </div>
+          </section>
+
+          <!-- LEGAL PROTECTION SECTION -->
+          <section class="section documents-section" id="legal">
+            <h2>🛡️ Юридичний захист та адвокатський супровід</h2>
+            <p class="documents-intro">
+              <strong>Експерт365</strong> — це не лише точна оцінка, а й
+              <strong>повна юридична безпека</strong>. Ми єдині на ринку, хто
+              надає комплексну підтримку результатів оцінки на всіх рівнях.
+            </p>
+
+            <div class="documents-list">
+              <div class="document-item">
+                <div class="document-number">
+                  <i class="fas fa-gavel"></i>
+                </div>
+                <div class="document-content">
+                  <h4>Співпраця з Адвокатським об'єднанням</h4>
+                  <p>
+                    Ми працюємо з професійним Адвокатським об'єднанням, яке
+                    спеціалізується на захисті інтересів клієнтів у майнових
+                    спорах по всій території України.
+                  </p>
+                </div>
+              </div>
+
+              <div class="document-item">
+                <div class="document-number">
+                  <i class="fas fa-check-double"></i>
+                </div>
+                <div class="document-content">
+                  <h4>Гарантія легітимності</h4>
+                  <p>
+                    Кожен наш звіт проходить внутрішній юридичний аудит перед
+                    видачею клієнту. Ми гарантуємо відповідність всім нормам
+                    законодавства.
+                  </p>
+                </div>
+              </div>
+
+              <div class="document-item">
+                <div class="document-number">
+                  <i class="fas fa-balance-scale"></i>
+                </div>
+                <div class="document-content">
+                  <h4>Захист у судах</h4>
+                  <p>
+                    У разі спроб оскарження оцінки опонентами, наші адвокати
+                    забезпечать повний супровід та доведуть правомірність
+                    визначеної вартості в судах усіх інстанцій.
+                  </p>
+                </div>
+              </div>
+
+              <div class="document-item">
+                <div class="document-number">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="document-content">
+                  <h4>Впевненість у результаті</h4>
+                  <p>
+                    Ви отримуєте не просто документ, а юридично захищений актив,
+                    який витримає будь-яку перевірку.
+                    <strong>Оцінка, яку неможливо оскаржити.</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- PARTNERS SECTION -->
           <section class="section partners-section" id="partners">
             <h2>Наші партнери</h2>
 
             <div class="partners-grid">
-              <a href="https://collect-center.com.ua/" target="_blank"
-                ><div class="partner-card">
-                  <img src="assets/partners/collect.png" alt="collect" />ТОВ
-                  "КОЛЛЕКТ ЦЕНТР"
-                </div></a
-              >
-              <a href="https://factoringp.ua/" target="_blank"
-                ><div class="partner-card">
-                  <img
-                    src="assets/partners/fp.png"
-                    alt="factoringPartners"
-                  />FactoringPartners
-                </div></a
-              >
-
-              <a href="https://factoringp.ua/" target="_blank"
-                ><div class="partner-card">
+              <a href="https://collect-center.com.ua/" target="_blank">
+                <div class="partner-card">
+                  <img src="assets/partners/collect.png" alt="collect" />
+                  ТОВ "КОЛЛЕКТ ЦЕНТР"
+                </div>
+              </a>
+              <a href="https://factoringp.ua/" target="_blank">
+                <div class="partner-card">
+                  <img src="assets/partners/fp.png" alt="factoringPartners" />
+                  FactoringPartners
+                </div>
+              </a>
+              <a href="https://factoringp.ua/" target="_blank">
+                <div class="partner-card">
                   <img
                     src="assets/partners/OzymandiaLogo.png"
                     alt="ozymandia"
-                  />OZYMANDIA
-                </div></a
-              >
+                  />
+                  OZYMANDIA
+                </div>
+              </a>
             </div>
 
             <div class="ispolniteli">
@@ -143,165 +383,57 @@
               <div class="ispolniteli-grid">
                 <div class="ispolnitel-card">
                   <a
-                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-bileckij-igor-mironovich.html"
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-shherbakov-yurij-sergijovich.html"
                     target="_blank"
                   >
-                    Білецький Ігор Миронович
+                    Щербаков Юрій Сергійович
                   </a>
                 </div>
                 <div class="ispolnitel-card">
                   <a
-                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-oshurko-mikola-mikolajovich.html"
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-rusecka-oksana-oleksandrivna.html"
                     target="_blank"
                   >
-                    Ошурко Микола Миколайович
+                    Русецька Оксана Олександрівна
                   </a>
                 </div>
-
                 <div class="ispolnitel-card">
                   <a
-                    href="https://borgu.net.ua/pv/vinnica/dumanska-al.html"
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-kudryashov-dmitro-vyacheslavovich.html"
                     target="_blank"
                   >
-                    Думанська Аліна Леонідівна
+                    Кудряшов Дмитро Вячеславович
+                  </a>
+                </div>
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-kosharskij-oleksandr-volodimirovich.html"
+                    target="_blank"
+                  >
+                    Кошарський Олександр Володимирович
+                  </a>
+                </div>
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-shagan-oleksij-anatolijovich.html"
+                    target="_blank"
+                  >
+                    Шаган Олексій Анатолійович
+                  </a>
+                </div>
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-valyavskij-oleksandr-anatolijovich.html"
+                    target="_blank"
+                  >
+                    Валявський Олександр Анатолійович
                   </a>
                 </div>
               </div>
             </div>
           </section>
-          <div class="section whyUs" id="why-us">
-            <div>
-              <h2 style="color: #b10000">Без нас</h2>
-              <ul class="reason-list">
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Нескінченні черги
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Підготовка і заповнення незрозумілих документів
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Створення проблемних і безвихідних ситуацій
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Обстеження об’єкта в зручний для фахівця час
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Відсутність гарантії на отримання результату
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Відсутність гарантії на отримання результату
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Складний багатоетапний процес, який забирає багато часу і сил
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 style="color: #14ac00">З нами</h2>
-              <ul class="reason-list">
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i
-                  >Консультації та оформлення заявок в телефонному режимі
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i>Точний
-                  і мінімальний перелік необхідних документів
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i
-                  >Зустрічі та переговори у зручний для замовника час
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i>Ніяких
-                  додаткових оплат
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i
-                  >Безкоштовна юридична консультація
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i>Ніяких
-                  нервів, кілька годин часу і професійно оформлені документи
-                </li>
-              </ul>
-            </div>
-          </div>
 
-          <div class="section" id="advantages">
-            <h2>Наші переваги</h2>
-            <ul id="advantage-list">
-              <li>Висока якість виконання робіт</li>
-              <li>Інноваційні підходи до вирішення задач</li>
-              <li>Дотримання строків</li>
-              <li>Конкурентні ціни</li>
-              <li>Технічна підтримка після завершення проекту</li>
-              <li>Індивідуальний підхід до кожного клієнта</li>
-            </ul>
-          </div>
-
-          <section class="about-section" id="about">
-            <div class="about-content">
-              <h2>Про нашу компанію</h2>
-              <p>
-                Ми – професійна оціночна компанія, яка спеціалізується на
-                експертній оцінці майна різного типу та призначення. Наша
-                команда складається з кваліфікованих експертів-оцінювачів з
-                багаторічним досвідом роботи у сфері оцінки нерухомості,
-                транспорту, обладнання та бізнесу.
-              </p>
-
-              <div class="mission-block">
-                <p>
-                  Наша місія – надавати клієнтам точні, обґрунтовані та
-                  незалежні оціночні висновки, що відповідають міжнародним
-                  стандартам та вимогам українського законодавства.
-                </p>
-              </div>
-
-              <p>
-                Ми розуміємо, що кожен клієнт має унікальні потреби, тому
-                пропонуємо індивідуальний підхід до кожного завдання. Наші звіти
-                визнаються банками, страховими компаніями, державними органами
-                та судами.
-              </p>
-
-              <div class="values-list">
-                <div class="value-item">
-                  <h3>Професійність</h3>
-                  <p>
-                    Наші експерти мають відповідні сертифікати та постійно
-                    підвищують кваліфікацію
-                  </p>
-                </div>
-                <div class="value-item">
-                  <h3>Точність</h3>
-                  <p>
-                    Використовуємо сучасні методики розрахунків та перевірені
-                    дані
-                  </p>
-                </div>
-                <div class="value-item">
-                  <h3>Відкритість</h3>
-                  <p>
-                    Прозорість процесу оцінки та детальне обґрунтування
-                    результатів
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="about-image">
-              Експертна оцінка майна<br />з 2010 року
-            </div>
-          </section>
-
+          <!-- CONTACT SECTION -->
           <section class="contact-section" id="contacts">
             <h2>Наші контакти</h2>
 
@@ -310,7 +442,7 @@
                 <i class="fas fa-phone"></i>
                 <div class="info-content">
                   <h3>Телефон</h3>
-                  <p>(093) 45-19-023</p>
+                  <p class="phone">(093) 45-19-023</p>
                 </div>
               </div>
 
@@ -339,6 +471,11 @@
           <p>© 2025 Експерт365. Всі права захищені.</p>
         </footer>
       </div>
+    </div>
+
+    <div class="copy-notification" id="copyNotification">
+      <i class="fas fa-check-circle"></i>
+      <span>Скопійовано!</span>
     </div>
 
     <dialog id="service-dialog">
@@ -377,13 +514,15 @@
         </div>
       </div>
     </dialog>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         initNavigation();
         initServiceDialog();
-        initTabsScroll();
         initScrollBehavior();
+        initContactInteractions(); // Новая функция
       });
+
       function initNavigation() {
         const navItems = document.querySelectorAll(".navigation-list li");
 
@@ -439,6 +578,7 @@
             current = section.getAttribute("id");
           }
         });
+
         if (!current && scrollPosition < 300) {
           current = sections[0].getAttribute("id");
         }
@@ -453,7 +593,9 @@
       }
 
       function initServiceDialog() {
-        const serviceButtons = document.querySelectorAll(".service-button");
+        const serviceButtons = document.querySelectorAll(
+          ".service-button, .cta-button, .cta-button-primary, .email-button, .cta-button-large"
+        );
         const serviceDialog = document.getElementById("service-dialog");
         const closeButton = document.querySelector(".close-button");
 
@@ -466,7 +608,6 @@
             event.preventDefault();
             serviceDialog.showModal();
             document.body.classList.add("dialog-open");
-
             serviceDialog.style.animation = "dialogFadeIn 0.3s ease-out";
           });
         });
@@ -499,6 +640,131 @@
           serviceDialog.close();
           document.body.classList.remove("dialog-open");
         }
+      }
+
+      function initScrollBehavior() {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+      }
+
+      // НОВАЯ ФУНКЦИЯ ДЛЯ РАБОТЫ С КОНТАКТАМИ
+      function initContactInteractions() {
+        const copyNotification = document.getElementById("copyNotification");
+
+        // Находим все элементы с контактами
+        const phoneElements = document.querySelectorAll(
+          ".phone, .phone-number, .nav-contact-item span"
+        );
+        const emailElements = document.querySelectorAll(".email");
+
+        // Функция для показа уведомления о копировании
+        function showCopyNotification() {
+          if (copyNotification) {
+            copyNotification.classList.add("show");
+            setTimeout(() => {
+              copyNotification.classList.remove("show");
+            }, 2000);
+          }
+        }
+
+        // Функция для копирования текста в буфер обмена
+        function copyToClipboard(text) {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+              showCopyNotification();
+            });
+          } else {
+            // Резервный метод для старых браузеров
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            showCopyNotification();
+          }
+        }
+
+        // Обработка телефонов
+        phoneElements.forEach((element) => {
+          // Добавляем стили курсора
+          element.style.cursor = "pointer";
+          element.style.userSelect = "none";
+
+          // Одинарный клик - предложение позвонить
+          element.addEventListener("click", function (e) {
+            e.preventDefault();
+            const phoneText = this.textContent.trim();
+            const cleanPhone = phoneText.replace(/\D/g, ""); // Удаляем все кроме цифр
+            window.location.href = `tel:+38${cleanPhone}`;
+          });
+
+          // Двойной клик - копирование
+          element.addEventListener("dblclick", function (e) {
+            e.preventDefault();
+            const phoneText = this.textContent.trim();
+            copyToClipboard(phoneText);
+          });
+        });
+
+        // Обработка email
+        emailElements.forEach((element) => {
+          element.style.cursor = "pointer";
+          element.style.userSelect = "none";
+
+          // Одинарный клик - открытие почтового клиента
+          element.addEventListener("click", function (e) {
+            const emailText = this.textContent.trim();
+            window.location.href = `mailto:${emailText}`;
+          });
+
+          // Двойной клик - копирование
+          element.addEventListener("dblclick", function (e) {
+            e.preventDefault();
+            const emailText = this.textContent.trim();
+            copyToClipboard(emailText);
+          });
+        });
+
+        // Обработка контактов в навигации (иконки + текст)
+        const navContactItems = document.querySelectorAll(".nav-contact-item");
+        navContactItems.forEach((item) => {
+          item.style.cursor = "pointer";
+
+          const span = item.querySelector("span");
+          if (!span) return;
+
+          const text = span.textContent.trim();
+          const isPhone = text.includes("(") || text.match(/\d/);
+
+          // Одинарный клик
+          item.addEventListener("click", function (e) {
+            if (e.target.tagName === "SPAN") return; // Пропускаем, если клик по span
+
+            if (isPhone) {
+              const cleanPhone = text.replace(/\D/g, "");
+              window.location.href = `tel:+38${cleanPhone}`;
+            } else {
+              window.location.href = `mailto:${text}`;
+            }
+          });
+
+          // Двойной клик для копирования
+          item.addEventListener("dblclick", function (e) {
+            e.preventDefault();
+            copyToClipboard(text);
+          });
+        });
       }
     </script>
   </body>

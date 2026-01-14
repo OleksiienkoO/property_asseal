@@ -871,25 +871,67 @@
   .partners-grid a {
     font-size: 11px;
   }
-
-  .ispolniteli h5 {
-    font-size: 16px;
-    margin-bottom: 12px;
-    margin-top: 25px;
+  .ispolniteli-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
   }
 
-  .ispolniteli-grid {
-    gap: 10px;
+  .ispolnitel-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+    border: 2px solid transparent;
+  }
+
+  .ispolniteli h5 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    margin-top: 40px;
+    position: relative;
   }
 
   .ispolnitel-card a {
-    padding: 10px;
-    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 1rem;
+    height: 100%;
+    transition: color 0.3s ease;
   }
 
   .ispolnitel-card img {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .ispolnitel-card:hover {
+    background: #e0f2fe;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+    border-color: var(--primary-color);
+  }
+
+  .ispolnitel-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .ispolnitel-card:hover a {
+    color: var(--primary-color);
   }
 
   /* WHY US */

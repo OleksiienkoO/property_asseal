@@ -3,28 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Оцінка.Експерт</title>
+    <title>Оцінка.Експерт - Для банків</title>
     <link rel="icon" href="assets/icon.png" type="image/png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- ВАЖЛИВО: Порядок підключення CSS файлів -->
     <link rel="stylesheet" href="styles/base.css" />
+    <!-- 1. Базові стилі та змінні -->
     <link rel="stylesheet" href="styles/banks.css" />
+    <!-- 2. Специфічні стилі сторінки -->
     <link rel="stylesheet" href="styles/responsive.css" />
+    <!-- 3. Адаптивність -->
     <link rel="stylesheet" href="styles/dialogs.css" />
+    <!-- 4. Діалоги та компоненти -->
   </head>
   <body>
     <nav class="navigation">
       <div class="navigation-container">
         <img src="./assets/logo.png" height="50vh" />
         <ul class="navigation-list">
+          <li data-target="intro">Про послугу</li>
           <li data-target="services">Наші послуги</li>
-          <li data-target="partners">Наші партнери</li>
-          <li data-target="why-us">Чому саме ми?</li>
-          <li data-target="advantages">Переваги</li>
-
-          <li data-target="about">Про нас</li>
+          <li data-target="key-features">Переваги роботи</li>
+          <li data-target="documents">Необхідні документи</li>
+          <li data-target="why-choose">Чому ми?</li>
+          <li data-target="partners">Партнери</li>
         </ul>
 
         <div class="navigation-contacts">
@@ -39,6 +44,7 @@
         </div>
       </div>
     </nav>
+
     <div class="tabs-container">
       <div class="tabs-wrapper">
         <a href="index.html" class="tab-item"> Оцінка майна </a>
@@ -56,33 +62,53 @@
       <div class="site">
         <header class="header">
           <div class="branding">
-            <div class="logo">Оцінка майна для банків</div>
+            <div class="logo">
+              Оцінка майна для банків та фінансових установ
+            </div>
+            <p>
+              Професійні послуги з незалежної оцінки майна для банків,
+              фінансових компаній, лізингових та факторингових установ
+            </p>
           </div>
         </header>
 
         <main class="main-content">
+          <!-- INTRO SECTION -->
+          <section class="section" id="intro">
+            <h2>Оцінка для банків та фінансових установ</h2>
+            <div class="intro-content">
+              <p class="intro-text">
+                Ми надаємо професійні послуги з незалежної оцінки майна для
+                банків, фінансових компаній, лізингових та факторингових
+                установ. Команда
+                <strong>Експерт365</strong> розуміє високі вимоги фінансового
+                сектору до точності, швидкості та регуляторної відповідності,
+                тому кожен звіт готується з урахуванням
+                <strong
+                  >вимог НБУ, ФДМУ та чинного законодавства України</strong
+                >
+                станом на 2026 рік.
+              </p>
+            </div>
+          </section>
+
+          <!-- SERVICES SECTION -->
           <div class="section" id="services">
-            <h2>Послуги для банків</h2>
-            <p style="font-size: 16px; color: #64748b; margin-bottom: 30px">
-              Ми надаємо повний спектр послуг з оцінки майна для банківських
-              установ, допомагаючи приймати обґрунтовані рішення щодо
-              кредитування та роботи з проблемною заборгованістю.
-            </p>
+            <h2>Наші послуги для банків</h2>
 
             <div class="services-grid">
               <div class="service-card">
                 <div class="service-image">
                   <img
-                    src="./assets//banks/calculate_estate.png"
+                    src="./assets/banks/calculate_estate.png"
                     alt="Оцінка застав"
-                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22240%22%3E%3Crect fill=%22%23e0f2fe%22 width=%22400%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%232563eb%22%3E%D0%9E%D1%86%D1%96%D0%BD%D0%BA%D0%B0 %D0%B7%D0%B0%D1%81%D1%82%D0%B0%D0%B2%3C/text%3E%3C/svg%3E'"
                   />
                 </div>
                 <div class="service-content">
                   <h3 class="service-title">
                     Оцінка застав при видачі кредитів
                   </h3>
-                  <p style="color: #64748b; line-height: 1.7">
+                  <p>
                     Професійна оцінка майна для визначення застави при
                     кредитуванні. Допомагаємо мінімізувати кредитні ризики
                     банку.
@@ -94,8 +120,8 @@
                     <li>Транспортні засоби</li>
                     <li>Обладнання та техніка</li>
                   </ul>
-                  <div class="service-price">Від 2000 грн.</div>
-                  <a class="service-button">Замовити послугу</a>
+
+                  <a class="service-button">Замовити оцінку</a>
                 </div>
               </div>
 
@@ -104,12 +130,11 @@
                   <img
                     src="./assets/banks/estate_debitor.png"
                     alt="Оцінка майна боржників"
-                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22240%22%3E%3Crect fill=%22%23dbeafe%22 width=%22400%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%231e40af%22%3E%D0%9C%D0%B0%D0%B9%D0%BD%D0%BE %D0%B1%D0%BE%D1%80%D0%B6%D0%BD%D0%B8%D0%BA%D1%96%D0%B2%3C/text%3E%3C/svg%3E'"
                   />
                 </div>
                 <div class="service-content">
                   <h3 class="service-title">Оцінка майна боржників</h3>
-                  <p style="color: #64748b; line-height: 1.7">
+                  <p>
                     Визначення ринкової вартості майна боржників для стягнення
                     заборгованості та прийняття управлінських рішень.
                   </p>
@@ -120,8 +145,8 @@
                     <li>Експрес-оцінка для швидких рішень</li>
                     <li>Повний звіт для службової роботи</li>
                   </ul>
-                  <div class="service-price">Від 2000 грн.</div>
-                  <a class="service-button">Замовити послугу</a>
+
+                  <a class="service-button">Замовити оцінку</a>
                 </div>
               </div>
 
@@ -130,14 +155,13 @@
                   <img
                     src="./assets/banks/court_reports.png"
                     alt="Звіти для суду"
-                    onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22240%22%3E%3Crect fill=%22%23f0f9ff%22 width=%22400%22 height=%22240%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%232563eb%22%3E%D0%A1%D1%83%D0%B4%D0%BE%D0%B2%D1%96 %D0%B7%D0%B2%D1%96%D1%82%D0%B8%3C/text%3E%3C/svg%3E'"
                   />
                 </div>
                 <div class="service-content">
                   <h3 class="service-title">
                     Підготовка звітів для судових справ
                   </h3>
-                  <p style="color: #64748b; line-height: 1.7">
+                  <p>
                     Професійні звіти про оцінку майна, що відповідають вимогам
                     судів та законодавства України.
                   </p>
@@ -148,217 +172,276 @@
                     <li>Звіти для платформи СЕТАМ</li>
                     <li>Супровід до реалізації майна</li>
                   </ul>
-                  <div class="service-price">Від 2000 грн.</div>
-                  <a class="service-button">Замовити послугу</a>
+
+                  <a class="service-button">Замовити оцінку</a>
                 </div>
               </div>
             </div>
-            <section class="section partners-section" id="partners">
-              <h2>Наші партнери</h2>
+          </div>
 
-              <div class="partners-grid">
-                <a href="https://collect-center.com.ua/" target="_blank"
-                  ><div class="partner-card">
-                    <img src="assets/partners/collect.png" alt="collect" />ТОВ
-                    "КОЛЛЕКТ ЦЕНТР"
-                  </div></a
-                >
-                <a href="https://factoringp.ua/" target="_blank"
-                  ><div class="partner-card">
-                    <img
-                      src="assets/partners/fp.png"
-                      alt="factoringPartners"
-                    />FactoringPartners
-                  </div></a
-                >
+          <!-- KEY FEATURES SECTION -->
+          <section class="section key-features-section" id="key-features">
+            <h2>Переваги роботи з Експерт365</h2>
 
-                <a href="https://factoringp.ua/" target="_blank"
-                  ><div class="partner-card">
-                    <img
-                      src="assets/partners/OzymandiaLogo.png"
-                      alt="ozymandia"
-                    />OZYMANDIA
-                  </div></a
-                >
-              </div>
-
-              <div class="ispolniteli">
-                <h5>Виконавці</h5>
-                <div class="ispolniteli-grid">
-                  <div class="ispolnitel-card">
-                    <a
-                      href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-bileckij-igor-mironovich.html"
-                      target="_blank"
-                    >
-                      Білецький Ігор Миронович
-                    </a>
-                  </div>
-                  <div class="ispolnitel-card">
-                    <a
-                      href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-oshurko-mikola-mikolajovich.html"
-                      target="_blank"
-                    >
-                      Ошурко Микола Миколайович
-                    </a>
-                  </div>
-
-                  <div class="ispolnitel-card">
-                    <a
-                      href="https://borgu.net.ua/pv/vinnica/dumanska-al.html"
-                      target="_blank"
-                    >
-                      Думанська Аліна Леонідівна
-                    </a>
-                  </div>
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-bolt"></i>
                 </div>
-              </div>
-            </section>
-          </div>
-
-          <div class="section whyUs" id="why-us">
-            <div>
-              <h2 style="color: #b10000">Без нас</h2>
-              <ul class="reason-list">
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Ризик неправильної оцінки застави
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Відсутність швидкого реагування на запити
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Складні процедури оформлення документів
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Відсутність спеціалізації на банківських продуктах
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Недостатньо детальні звіти для прийняття рішень
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Великі терміни виконання робіт
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 style="color: #14ac00">З нами</h2>
-              <ul class="reason-list">
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i>
-                  Досвід роботи з провідними банками України
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i>
-                  Швидка оцінка для термінових кредитних рішень
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i>
-                  Детальні звіти, що відповідають банківським стандартам
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i>
-                  Знання специфіки банківського кредитування
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i>
-                  Гнучка система знижок для постійних клієнтів
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i>
-                  Професійний супровід на всіх етапах
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="section" id="advantages">
-            <h2>Наші переваги для банків</h2>
-            <ul id="advantage-list">
-              <li>Досвід роботи з банківським сектором з 2010 року</li>
-              <li>Звіти відповідають вимогам НБУ та міжнародним стандартам</li>
-              <li>Швидка обробка запитів - від 1 до 3 робочих днів</li>
-              <li>Спеціальні тарифи для корпоративних клієнтів</li>
-              <li>Професійна підтримка на всіх етапах співпраці</li>
-              <li>Електронний документообіг для зручності</li>
-              <li>Регулярне підвищення кваліфікації наших експертів</li>
-              <li>Страхування професійної відповідальності</li>
-            </ul>
-          </div>
-
-          <section class="about-section" id="about">
-            <div class="about-content">
-              <h2>Чому банки обирають нас</h2>
-              <p>
-                Ми розуміємо специфіку роботи банківських установ і знаємо,
-                наскільки важливою є швидкість та точність оцінки для прийняття
-                кредитних рішень. Наша команда має багаторічний досвід співпраці
-                з провідними банками України.
-              </p>
-
-              <div class="mission-block">
+                <h3>Максимальна оперативність</h3>
                 <p>
-                  Наша місія у роботі з банками – надавати точні та обґрунтовані
-                  оціночні висновки, які допомагають мінімізувати кредитні
-                  ризики та приймати виважені рішення щодо заставного майна та
-                  роботи з проблемною заборгованістю.
+                  Ми працюємо в темпі фінансового ринку.
+                  <strong>Підготовка звіту — від 1 робочого дня</strong>, а за
+                  термінових кейсів — від кількох годин після отримання повного
+                  пакета документів.
                 </p>
               </div>
 
-              <p>
-                Ми працюємо відповідно до вимог Національного банку України,
-                міжнародних стандартів оцінки та внутрішніх регламентів
-                банківських установ. Наші звіти визнаються всіма банками України
-                та державними органами.
-              </p>
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Регуляторна та юридична відповідність</h3>
+                <p>
+                  Наші звіти відповідають стандартам ФДМУ, враховують вимоги НБУ
+                  та внутрішні політики банків. У разі перевірок або спорів ми
+                  забезпечуємо експертний та юридичний супровід.
+                </p>
+              </div>
 
-              <div class="values-list">
-                <div class="value-item">
-                  <h3>Швидкість</h3>
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Гнучкі умови співпраці</h3>
+                <p>
+                  Для банків, фінансових компаній та корпоративних клієнтів
+                  діють рамкові договори, індивідуальні тарифи та спеціальні
+                  умови при великому обсязі оцінок.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- DOCUMENTS SECTION -->
+          <section class="section documents-section" id="documents">
+            <h2>📋 Необхідні документи</h2>
+            <p class="documents-intro">
+              Для початку роботи зазвичай достатньо:
+            </p>
+
+            <div class="documents-list">
+              <div class="document-item">
+                <div class="document-number">1</div>
+                <div class="document-content">
+                  <h4>Заявка або лист</h4>
+                  <p>Заявка або лист від фінансової установи</p>
+                </div>
+              </div>
+
+              <div class="document-item">
+                <div class="document-number">2</div>
+                <div class="document-content">
+                  <h4>Документи на майно</h4>
+                  <p>Право власності, техпаспорти, договори</p>
+                </div>
+              </div>
+
+              <div class="document-item">
+                <div class="document-number">3</div>
+                <div class="document-content">
+                  <h4>Фінансова інформація</h4>
+                  <p>Фінансова інформація (за потреби)</p>
+                </div>
+              </div>
+
+              <div class="document-item">
+                <div class="document-number">4</div>
+                <div class="document-content">
+                  <h4>Фото об'єкта</h4>
+                  <p>Фото об'єкта оцінки (за можливості)</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- WHY CHOOSE US SECTION -->
+          <section class="section why-choose-section" id="why-choose">
+            <h2>Чому банки та фінансові установи обирають Експерт365?</h2>
+            <p class="section-subtitle">
+              Фінансовий сектор вимагає швидкості, точності та надійності. Ми
+              створили процеси, які забезпечують усі ці аспекти на найвищому
+              рівні.
+            </p>
+
+            <div class="why-choose-grid">
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Швидкість прийняття рішень</h3>
                   <p>
-                    Розуміємо важливість термінів. Експрес-оцінка за 1-2 дні для
-                    термінових рішень
+                    Ми допомагаємо фінансовим установам не втрачати час на
+                    погодження та кредитні комітети — чіткі, зрозумілі та
+                    аргументовані звіти без «води».
                   </p>
                 </div>
-                <div class="value-item">
-                  <h3>Надійність</h3>
+              </div>
+
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Мінімізація ризиків</h3>
                   <p>
-                    Страхування професійної відповідальності та гарантія якості
-                    наших звітів
+                    Наші оцінки витримують внутрішній контроль, зовнішній аудит
+                    та перевірки регуляторів. Ви можете бути впевнені в якості
+                    та обґрунтованості кожного висновку.
                   </p>
                 </div>
-                <div class="value-item">
-                  <h3>Досвід</h3>
+              </div>
+
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-tasks"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Робота з будь-якими активами</h3>
                   <p>
-                    Понад 13 років успішної співпраці з банківськими установами
-                    України
+                    Оцінюємо всі типи майна: житлову та комерційну нерухомість,
+                    землю, транспорт і спецтехніку, обладнання, корпоративні
+                    права та фінансові інструменти.
+                  </p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Партнерський підхід</h3>
+                  <p>
+                    Ми не просто виконавець, а довгостроковий партнер фінансової
+                    установи, який розуміє бізнес-процеси, ризики та
+                    відповідальність.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="about-image">
-              Експерт365<br />для банків<br />з 2010 року
+            <div class="closing-statement">
+              <p>
+                <strong>Експерт365</strong> — надійна оцінка для зважених
+                фінансових рішень.
+              </p>
+            </div>
+
+            <!-- CTA SIMPLE -->
+            <div class="cta-simple">
+              <p class="cta-text">
+                <strong>Потрібна оцінка для банку вже сьогодні?</strong><br />
+                Зв'яжіться з нашим спеціалістом прямо зараз!
+              </p>
+              <a class="cta-button-primary">Надіслати заявку на оцінку</a>
             </div>
           </section>
 
+          <!-- PARTNERS SECTION -->
+          <section class="section partners-section" id="partners">
+            <h2>Наші партнери</h2>
+
+            <div class="partners-grid">
+              <a href="https://collect-center.com.ua/" target="_blank">
+                <div class="partner-card">
+                  <img src="assets/partners/collect.png" alt="collect" />
+                  ТОВ "КОЛЛЕКТ ЦЕНТР"
+                </div>
+              </a>
+              <a href="https://factoringp.ua/" target="_blank">
+                <div class="partner-card">
+                  <img src="assets/partners/fp.png" alt="factoringPartners" />
+                  FactoringPartners
+                </div>
+              </a>
+              <a href="https://factoringp.ua/" target="_blank">
+                <div class="partner-card">
+                  <img
+                    src="assets/partners/OzymandiaLogo.png"
+                    alt="ozymandia"
+                  />
+                  OZYMANDIA
+                </div>
+              </a>
+            </div>
+
+            <div class="ispolniteli">
+              <h5>Виконавці</h5>
+              <div class="ispolniteli-grid">
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-shherbakov-yurij-sergijovich.html"
+                    target="_blank"
+                  >
+                    Щербаков Юрій Сергійович
+                  </a>
+                </div>
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-rusecka-oksana-oleksandrivna.html"
+                    target="_blank"
+                  >
+                    Русецька Оксана Олександрівна
+                  </a>
+                </div>
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-kudryashov-dmitro-vyacheslavovich.html"
+                    target="_blank"
+                  >
+                    Кудряшов Дмитро Вячеславович
+                  </a>
+                </div>
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-kosharskij-oleksandr-volodimirovich.html"
+                    target="_blank"
+                  >
+                    Кошарський Олександр Володимирович
+                  </a>
+                </div>
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-shagan-oleksij-anatolijovich.html"
+                    target="_blank"
+                  >
+                    Шаган Олексій Анатолійович
+                  </a>
+                </div>
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-valyavskij-oleksandr-anatolijovich.html"
+                    target="_blank"
+                  >
+                    Валявський Олександр Анатолійович
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- CONTACT SECTION -->
           <section class="contact-section" id="contacts">
-            <h2>Зв'яжіться з нами</h2>
-            <p style="font-size: 16px; color: #64748b; margin-bottom: 30px">
-              Готові відповісти на всі ваші питання та надати консультацію щодо
-              оцінки майна для банківських потреб
-            </p>
+            <h2>Наші контакти</h2>
 
             <div class="contact-info">
               <div class="info-item">
                 <i class="fas fa-phone"></i>
                 <div class="info-content">
                   <h3>Телефон</h3>
-                  <p>(093) 45-19-023</p>
+                  <p class="phone">(093) 45-19-023</p>
                 </div>
               </div>
 
@@ -387,6 +470,11 @@
           <p>© 2025 Експерт365. Всі права захищені.</p>
         </footer>
       </div>
+    </div>
+
+    <div class="copy-notification" id="copyNotification">
+      <i class="fas fa-check-circle"></i>
+      <span>Скопійовано!</span>
     </div>
 
     <dialog id="service-dialog">
@@ -430,9 +518,10 @@
       document.addEventListener("DOMContentLoaded", function () {
         initNavigation();
         initServiceDialog();
-        initTabsScroll();
         initScrollBehavior();
+        initContactInteractions(); // Новая функция
       });
+
       function initNavigation() {
         const navItems = document.querySelectorAll(".navigation-list li");
 
@@ -488,6 +577,7 @@
             current = section.getAttribute("id");
           }
         });
+
         if (!current && scrollPosition < 300) {
           current = sections[0].getAttribute("id");
         }
@@ -502,7 +592,9 @@
       }
 
       function initServiceDialog() {
-        const serviceButtons = document.querySelectorAll(".service-button");
+        const serviceButtons = document.querySelectorAll(
+          ".service-button, .cta-button, .cta-button-primary, .email-button, .cta-button-large"
+        );
         const serviceDialog = document.getElementById("service-dialog");
         const closeButton = document.querySelector(".close-button");
 
@@ -515,7 +607,6 @@
             event.preventDefault();
             serviceDialog.showModal();
             document.body.classList.add("dialog-open");
-
             serviceDialog.style.animation = "dialogFadeIn 0.3s ease-out";
           });
         });
@@ -548,6 +639,131 @@
           serviceDialog.close();
           document.body.classList.remove("dialog-open");
         }
+      }
+
+      function initScrollBehavior() {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
+      }
+
+      // НОВАЯ ФУНКЦИЯ ДЛЯ РАБОТЫ С КОНТАКТАМИ
+      function initContactInteractions() {
+        const copyNotification = document.getElementById("copyNotification");
+
+        // Находим все элементы с контактами
+        const phoneElements = document.querySelectorAll(
+          ".phone, .phone-number, .nav-contact-item span"
+        );
+        const emailElements = document.querySelectorAll(".email");
+
+        // Функция для показа уведомления о копировании
+        function showCopyNotification() {
+          if (copyNotification) {
+            copyNotification.classList.add("show");
+            setTimeout(() => {
+              copyNotification.classList.remove("show");
+            }, 2000);
+          }
+        }
+
+        // Функция для копирования текста в буфер обмена
+        function copyToClipboard(text) {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+              showCopyNotification();
+            });
+          } else {
+            // Резервный метод для старых браузеров
+            const tempInput = document.createElement("input");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            showCopyNotification();
+          }
+        }
+
+        // Обработка телефонов
+        phoneElements.forEach((element) => {
+          // Добавляем стили курсора
+          element.style.cursor = "pointer";
+          element.style.userSelect = "none";
+
+          // Одинарный клик - предложение позвонить
+          element.addEventListener("click", function (e) {
+            e.preventDefault();
+            const phoneText = this.textContent.trim();
+            const cleanPhone = phoneText.replace(/\D/g, ""); // Удаляем все кроме цифр
+            window.location.href = `tel:+38${cleanPhone}`;
+          });
+
+          // Двойной клик - копирование
+          element.addEventListener("dblclick", function (e) {
+            e.preventDefault();
+            const phoneText = this.textContent.trim();
+            copyToClipboard(phoneText);
+          });
+        });
+
+        // Обработка email
+        emailElements.forEach((element) => {
+          element.style.cursor = "pointer";
+          element.style.userSelect = "none";
+
+          // Одинарный клик - открытие почтового клиента
+          element.addEventListener("click", function (e) {
+            const emailText = this.textContent.trim();
+            window.location.href = `mailto:${emailText}`;
+          });
+
+          // Двойной клик - копирование
+          element.addEventListener("dblclick", function (e) {
+            e.preventDefault();
+            const emailText = this.textContent.trim();
+            copyToClipboard(emailText);
+          });
+        });
+
+        // Обработка контактов в навигации (иконки + текст)
+        const navContactItems = document.querySelectorAll(".nav-contact-item");
+        navContactItems.forEach((item) => {
+          item.style.cursor = "pointer";
+
+          const span = item.querySelector("span");
+          if (!span) return;
+
+          const text = span.textContent.trim();
+          const isPhone = text.includes("(") || text.match(/\d/);
+
+          // Одинарный клик
+          item.addEventListener("click", function (e) {
+            if (e.target.tagName === "SPAN") return; // Пропускаем, если клик по span
+
+            if (isPhone) {
+              const cleanPhone = text.replace(/\D/g, "");
+              window.location.href = `tel:+38${cleanPhone}`;
+            } else {
+              window.location.href = `mailto:${text}`;
+            }
+          });
+
+          // Двойной клик для копирования
+          item.addEventListener("dblclick", function (e) {
+            e.preventDefault();
+            copyToClipboard(text);
+          });
+        });
       }
     </script>
   </body>

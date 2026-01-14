@@ -3,28 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Оцінка.Експерт</title>
+    <title>Оцінка.Експерт - Для арбітражних керуючих</title>
     <link rel="icon" href="assets/icon.png" type="image/png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <!-- ВАЖЛИВО: Порядок підключення CSS файлів -->
     <link rel="stylesheet" href="styles/base.css" />
+    <!-- 1. Базові стилі та змінні -->
     <link rel="stylesheet" href="styles/arbitrage_manager.css" />
+    <!-- 2. Специфічні стилі сторінки -->
     <link rel="stylesheet" href="styles/responsive.css" />
+    <!-- 3. Адаптивність -->
     <link rel="stylesheet" href="styles/dialogs.css" />
+    <!-- 4. Діалоги та компоненти -->
   </head>
   <body>
     <nav class="navigation">
       <div class="navigation-container">
         <img src="./assets/logo.png" height="50vh" />
         <ul class="navigation-list">
+          <li data-target="intro">Про послугу</li>
           <li data-target="services">Наші послуги</li>
-          <li data-target="partners">Наші партнери</li>
-
-          <li data-target="advantages">Переваги</li>
-          <li data-target="why-us">Чому саме ми?</li>
-          <li data-target="about">Про нас</li>
+          <li data-target="key-features">Переваги роботи</li>
+          <li data-target="documents">Необхідні документи</li>
+          <li data-target="why-choose">Чому ми?</li>
+          <li data-target="partners">Партнери</li>
         </ul>
 
         <div class="navigation-contacts">
@@ -39,6 +44,7 @@
         </div>
       </div>
     </nav>
+
     <div class="tabs-container">
       <div class="tabs-wrapper">
         <a href="index.html" class="tab-item"> Оцінка майна </a>
@@ -51,32 +57,79 @@
         <a href="banks.html" class="tab-item"> Для банків </a>
       </div>
     </div>
+
     <div class="container">
       <div class="site">
         <header class="header">
           <div class="branding">
-            <div class="logo">Оцінка майна для арбітражного керуючого</div>
+            <div class="logo">Оцінка майна для арбітражних керуючих</div>
+            <p>
+              Комплексні послуги з оцінки активів у процедурах банкрутства та
+              санації з повним юридичним супроводом
+            </p>
           </div>
         </header>
 
         <main class="main-content">
+          <!-- INTRO SECTION -->
+          <section class="section" id="intro">
+            <h2>Оцінка для процедур банкрутства та санації</h2>
+            <div class="intro-content">
+              <p class="intro-text">
+                Ми пропонуємо комплексні послуги з оцінки активів у процедурах
+                банкрутства та санації. Команда
+                <strong>Експерт365</strong> розуміє специфіку Кодексу України з
+                процедур банкрутства та вимоги кредиторів, тому ми гарантуємо
+                <strong>високу якість, прозорість</strong> та
+                <strong
+                  >повну відповідність звітів законодавству 2026 року</strong
+                >.
+              </p>
+            </div>
+          </section>
+
+          <!-- SERVICES SECTION -->
           <div class="section" id="services">
-            <h2>Наші послуги</h2>
+            <h2>Наші послуги для арбітражних керуючих</h2>
 
             <div class="services-grid">
               <div class="service-card">
                 <div class="service-image">
                   <img
                     src="./assets/services/room.jpg"
-                    alt="[Фото для оцінки нерухомості]"
+                    alt="Оцінка для реалізації на PROZORRO"
                   />
                 </div>
                 <div class="service-content">
                   <h3 class="service-title">
-                    Оцінка нерухомості,земельних ділянок, транспорту та інших
-                    активів підприємств
+                    Оцінка для реалізації на PROZORRO.ПРОДАЖІ
                   </h3>
-                  <div class="service-price">2000 грн.</div>
+                  <p>
+                    Визначення вартості ліквідаційної маси (нерухомість,
+                    обладнання, транспорт) для проведення успішних аукціонів у
+                    системі електронних торгів.
+                  </p>
+
+                  <a class="service-button">Замовити оцінку</a>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-image">
+                  <img
+                    src="./assets/services/document.jpg"
+                    alt="Оцінка дебіторської заборгованості"
+                  />
+                </div>
+                <div class="service-content">
+                  <h3 class="service-title">
+                    Оцінка дебіторської заборгованості
+                  </h3>
+                  <p>
+                    Експертний аналіз та визначення реальної вартості прав
+                    вимоги боржника для їх подальшого продажу або списання.
+                  </p>
+
                   <a class="service-button">Замовити оцінку</a>
                 </div>
               </div>
@@ -85,65 +138,259 @@
                 <div class="service-image">
                   <img
                     src="./assets/services/summary.jpg"
-                    alt="[Фото для висновку]"
+                    alt="Оцінка цілісних майнових комплексів"
                   />
                 </div>
                 <div class="service-content">
                   <h3 class="service-title">
-                    Підготовка висновків, які можуть бути використані у судах та
-                    конкурсних провадженнях
+                    Оцінка цілісних майнових комплексів (ЦМК)
                   </h3>
-
-                  <div class="service-price">2000 грн.</div>
-                  <a class="service-button">Замовити оцінку</a>
-                </div>
-              </div>
-              <div class="service-card">
-                <div class="service-image">
-                  <img
-                    src="./assets/services/consultation.jpg"
-                    alt="[Фото для Консультації]"
-                  />
-                </div>
-                <div class="service-content">
-                  <h3 class="service-title">
-                    Консультації щодо правильного оформлення документів для
-                    процедур банкрутства
-                  </h3>
-
-                  <div class="service-price">2000 грн.</div>
+                  <p>
+                    Комплексна оцінка підприємств як єдиного об'єкта для
+                    процедур санації або продажу в межах ліквідаційної
+                    процедури.
+                  </p>
                   <a class="service-button">Замовити оцінку</a>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- KEY FEATURES SECTION -->
+          <section class="section key-features-section" id="key-features">
+            <h2>Переваги роботи з Експерт365</h2>
+
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Максимальна швидкість</h3>
+                <p>
+                  Ми працюємо оперативно, щоб ви вклалися в терміни процедури.
+                  <strong
+                    >Підготовка попереднього розрахунку або звіту — від 2
+                    годин</strong
+                  >
+                  з моменту надання необхідних документів.
+                </p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Юридичний захист звітів</h3>
+                <p>
+                  Наші звіти проходять внутрішню перевірку фахівцями нашого
+                  Адвокатського об'єднання. Ми забезпечуємо повний супровід та
+                  захист результатів оцінки на засіданнях комітету кредиторів та
+                  в господарських судах.
+                </p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Гнучкість у ціноутворенні</h3>
+                <p>
+                  Ми розуміємо особливості фінансування процедур банкрутства.
+                  При великих обсягах активів одного підприємства або регулярній
+                  співпраці вартість послуг обговорюється індивідуально.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- DOCUMENTS SECTION -->
+          <section class="section documents-section" id="documents">
+            <h2>📋 Необхідні документи</h2>
+            <p class="documents-intro">Для початку роботи нам достатньо:</p>
+
+            <div class="documents-list">
+              <div class="document-item">
+                <div class="document-number">1</div>
+                <div class="document-content">
+                  <h4>Копії ухвали суду</h4>
+                  <p>
+                    Копії ухвали суду про призначення арбітражного керуючого
+                  </p>
+                </div>
+              </div>
+
+              <div class="document-item">
+                <div class="document-number">2</div>
+                <div class="document-content">
+                  <h4>Перелік майна</h4>
+                  <p>
+                    Наявний перелік майна (інвентаризаційні описи, балансова
+                    довідка)
+                  </p>
+                </div>
+              </div>
+
+              <div class="document-item">
+                <div class="document-number">3</div>
+                <div class="document-content">
+                  <h4>Технічна документація</h4>
+                  <p>Технічна документація на об'єкти (за наявності)</p>
+                </div>
+              </div>
+
+              <div class="document-item">
+                <div class="document-number">4</div>
+                <div class="document-content">
+                  <h4>Фото об'єктів</h4>
+                  <p>Фото об'єктів, що потребують оцінки (за можливості)</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- WHY CHOOSE US SECTION -->
+          <section class="section why-choose-section" id="why-choose">
+            <h2>Чому арбітражні керуючі обирають Експерт365?</h2>
+            <p class="section-subtitle">
+              Робота арбітражного керуючого — це завжди баланс між вимогами
+              кредиторів, рішеннями суду та суворими термінами. Ми побудували
+              свої процеси так, щоб стати вашим найнадійнішим тилом у 2026 році.
+            </p>
+
+            <div class="why-choose-grid">
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-balance-scale"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Бездоганна репутація для суду та кредиторів</h3>
+                  <p>
+                    Наші звіти розроблені з урахуванням усіх вимог Кодексу
+                    України з процедур банкрутства. Вони легко проходять
+                    затвердження на комітетах кредиторів та не викликають
+                    запитань у господарських судах.
+                  </p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-gavel"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Адвокатський захист «під ключ»</h3>
+                  <p>
+                    Ми єдина компанія, яка надає підтримку Адвокатського
+                    об'єднання. Якщо хтось із кредиторів намагається оскаржити
+                    оцінку — наші юристи захищають звіт у суді, знімаючи цей
+                    головний біль з арбітражного керуючого.
+                  </p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Адаптація під Prozorro.Продажі</h3>
+                  <p>
+                    Ми знаємо технічні вимоги всіх майданчиків. Наші звіти
+                    готуються у форматі, що ідеально підходить для публікації
+                    лотів, що гарантує швидку модерацію та старт торгів.
+                  </p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Гнучкість в оплаті послуг</h3>
+                  <p>
+                    Ми розуміємо специфіку фінансування ліквідаційних процедур.
+                    Ми завжди готові до діалогу щодо етапів оплати,
+                    підлаштовуючись під стан формування ліквідаційної маси
+                    підприємства.
+                  </p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-industry"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Оцінка «важких» активів</h3>
+                  <p>
+                    Ми беремося за складні випадки: від оцінки безнадійної
+                    дебіторської заборгованості та інтелектуальної власності до
+                    застарілого промислового обладнання у зоні ризику.
+                  </p>
+                </div>
+              </div>
+
+              <div class="why-card">
+                <div class="why-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="why-text">
+                  <h3>Швидкість 24/7</h3>
+                  <p>
+                    Арбітражний процес не чекає. Попередній розрахунок вартості
+                    активів для підготовки аналізу фінансово-господарського
+                    стану ми надаємо протягом декількох годин.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="closing-statement">
+              <p>
+                <strong>Експерт365</strong> — це впевненість у кожній цифрі
+                вашого звіту.
+              </p>
+            </div>
+
+            <!-- CTA SIMPLE -->
+            <div class="cta-simple">
+              <p class="cta-text">
+                <strong
+                  >Потрібен звіт для комітету кредиторів вже сьогодні?</strong
+                ><br />
+                Зв'яжіться з нашим спеціалістом прямо зараз!
+              </p>
+              <a class="cta-button-primary">Надіслати запит на оцінку</a>
+            </div>
+          </section>
+
+          <!-- PARTNERS SECTION -->
           <section class="section partners-section" id="partners">
             <h2>Наші партнери</h2>
 
             <div class="partners-grid">
-              <a href="https://collect-center.com.ua/" target="_blank"
-                ><div class="partner-card">
-                  <img src="assets/partners/collect.png" alt="collect" />ТОВ
-                  "КОЛЛЕКТ ЦЕНТР"
-                </div></a
-              >
-              <a href="https://factoringp.ua/" target="_blank"
-                ><div class="partner-card">
-                  <img
-                    src="assets/partners/fp.png"
-                    alt="factoringPartners"
-                  />FactoringPartners
-                </div></a
-              >
-
-              <a href="https://factoringp.ua/" target="_blank"
-                ><div class="partner-card">
+              <a href="https://collect-center.com.ua/" target="_blank">
+                <div class="partner-card">
+                  <img src="assets/partners/collect.png" alt="collect" />
+                  ТОВ "КОЛЛЕКТ ЦЕНТР"
+                </div>
+              </a>
+              <a href="https://factoringp.ua/" target="_blank">
+                <div class="partner-card">
+                  <img src="assets/partners/fp.png" alt="factoringPartners" />
+                  FactoringPartners
+                </div>
+              </a>
+              <a href="https://factoringp.ua/" target="_blank">
+                <div class="partner-card">
                   <img
                     src="assets/partners/OzymandiaLogo.png"
                     alt="ozymandia"
-                  />OZYMANDIA
-                </div></a
-              >
+                  />
+                  OZYMANDIA
+                </div>
+              </a>
             </div>
 
             <div class="ispolniteli">
@@ -151,168 +398,57 @@
               <div class="ispolniteli-grid">
                 <div class="ispolnitel-card">
                   <a
-                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-bileckij-igor-mironovich.html"
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-shherbakov-yurij-sergijovich.html"
                     target="_blank"
                   >
-                    Білецький Ігор Миронович
+                    Щербаков Юрій Сергійович
                   </a>
                 </div>
                 <div class="ispolnitel-card">
                   <a
-                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-oshurko-mikola-mikolajovich.html"
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-rusecka-oksana-oleksandrivna.html"
                     target="_blank"
                   >
-                    Ошурко Микола Миколайович
+                    Русецька Оксана Олександрівна
                   </a>
                 </div>
-
                 <div class="ispolnitel-card">
                   <a
-                    href="https://borgu.net.ua/pv/vinnica/dumanska-al.html"
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-kudryashov-dmitro-vyacheslavovich.html"
                     target="_blank"
                   >
-                    Думанська Аліна Леонідівна
+                    Кудряшов Дмитро Вячеславович
+                  </a>
+                </div>
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-kosharskij-oleksandr-volodimirovich.html"
+                    target="_blank"
+                  >
+                    Кошарський Олександр Володимирович
+                  </a>
+                </div>
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-shagan-oleksij-anatolijovich.html"
+                    target="_blank"
+                  >
+                    Шаган Олексій Анатолійович
+                  </a>
+                </div>
+                <div class="ispolnitel-card">
+                  <a
+                    href="https://ukrogis.com/adresi-privatnix-vikonavciv/vikonavec-valyavskij-oleksandr-anatolijovich.html"
+                    target="_blank"
+                  >
+                    Валявський Олександр Анатолійович
                   </a>
                 </div>
               </div>
             </div>
           </section>
-          <div class="section" id="advantages">
-            <h2>Переваги для арбітражних керуючих</h2>
-            <ul id="advantage-list">
-              <li>Об’єктивність та незалежність оцінки</li>
-              <li>
-                Відповідність усім національним стандартам оцінки та
-                законодавству про банкрутство
-              </li>
-              <li>Швидке оформлення та електронна доставка висновку</li>
-              <li>
-                Досвід роботи з банкрутством та корпоративними процедурами
-              </li>
-            </ul>
-          </div>
 
-          <div class="section whyUs" id="why-us">
-            <div>
-              <h2 style="color: #b10000">Без нас</h2>
-              <ul class="reason-list">
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Нескінченні черги
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Підготовка і заповнення незрозумілих документів
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Створення проблемних і безвихідних ситуацій
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Обстеження об’єкта в зручний для фахівця час
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Відсутність гарантії на отримання результату
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Відсутність гарантії на отримання результату
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-xmark" style="color: #b10000"></i>
-                  Складний багатоетапний процес, який забирає багато часу і сил
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 style="color: #14ac00">З нами</h2>
-              <ul class="reason-list">
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i
-                  >Консультації та оформлення заявок в телефонному режимі
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i>Точний
-                  і мінімальний перелік необхідних документів
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i
-                  >Зустрічі та переговори у зручний для замовника час
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i>Ніяких
-                  додаткових оплат
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i
-                  >Безкоштовна юридична консультація
-                </li>
-                <li class="reason">
-                  <i class="fa-solid fa-check" style="color: #14ac00"></i>Ніяких
-                  нервів, кілька годин часу і професійно оформлені документи
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <section class="about-section" id="about">
-            <div class="about-content">
-              <h2>Про нашу компанію</h2>
-              <p>
-                Ми – професійна оціночна компанія, яка спеціалізується на
-                експертній оцінці майна різного типу та призначення. Наша
-                команда складається з кваліфікованих експертів-оцінювачів з
-                багаторічним досвідом роботи у сфері оцінки нерухомості,
-                транспорту, обладнання та бізнесу.
-              </p>
-
-              <div class="mission-block">
-                <p>
-                  Наша місія – надавати клієнтам точні, обґрунтовані та
-                  незалежні оціночні висновки, що відповідають міжнародним
-                  стандартам та вимогам українського законодавства.
-                </p>
-              </div>
-
-              <p>
-                Ми розуміємо, що кожен клієнт має унікальні потреби, тому
-                пропонуємо індивідуальний підхід до кожного завдання. Наші звіти
-                визнаються банками, страховими компаніями, державними органами
-                та судами.
-              </p>
-
-              <div class="values-list">
-                <div class="value-item">
-                  <h3>Професійність</h3>
-                  <p>
-                    Наші експерти мають відповідні сертифікати та постійно
-                    підвищують кваліфікацію
-                  </p>
-                </div>
-                <div class="value-item">
-                  <h3>Точність</h3>
-                  <p>
-                    Використовуємо сучасні методики розрахунків та перевірені
-                    дані
-                  </p>
-                </div>
-                <div class="value-item">
-                  <h3>Відкритість</h3>
-                  <p>
-                    Прозорість процесу оцінки та детальне обґрунтування
-                    результатів
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="about-image">
-              Експертна оцінка майна<br />з 2010 року
-            </div>
-          </section>
-
+          <!-- CONTACT SECTION -->
           <section class="contact-section" id="contacts">
             <h2>Наші контакти</h2>
 
@@ -393,13 +529,15 @@
         </div>
       </div>
     </dialog>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         initNavigation();
         initServiceDialog();
-        initTabsScroll();
         initScrollBehavior();
+        initContactInteractions(); // Новая функция
       });
+
       function initNavigation() {
         const navItems = document.querySelectorAll(".navigation-list li");
 
@@ -455,6 +593,7 @@
             current = section.getAttribute("id");
           }
         });
+
         if (!current && scrollPosition < 300) {
           current = sections[0].getAttribute("id");
         }
@@ -469,7 +608,9 @@
       }
 
       function initServiceDialog() {
-        const serviceButtons = document.querySelectorAll(".service-button");
+        const serviceButtons = document.querySelectorAll(
+          ".service-button, .cta-button, .cta-button-primary, .email-button, .cta-button-large"
+        );
         const serviceDialog = document.getElementById("service-dialog");
         const closeButton = document.querySelector(".close-button");
 
@@ -482,7 +623,6 @@
             event.preventDefault();
             serviceDialog.showModal();
             document.body.classList.add("dialog-open");
-
             serviceDialog.style.animation = "dialogFadeIn 0.3s ease-out";
           });
         });
@@ -515,6 +655,21 @@
           serviceDialog.close();
           document.body.classList.remove("dialog-open");
         }
+      }
+
+      function initScrollBehavior() {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          });
+        });
       }
     </script>
   </body>
