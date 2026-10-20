@@ -39,7 +39,7 @@
           </div>
           <div class="nav-contact-item">
             <i class="fas fa-envelope"></i>
-            <span>expert365@ukr.net</span>
+            <span>support@expert365.com</span>
           </div>
         </div>
       </div>
@@ -450,7 +450,7 @@
                 <i class="fas fa-envelope"></i>
                 <div class="info-content">
                   <h3>Email</h3>
-                  <p class="email">expert365@ukr.net</p>
+                  <p class="email">support@expert365.com</p>
                 </div>
               </div>
 
@@ -498,7 +498,7 @@
             <i class="fas fa-envelope"></i>
             <div class="info-content">
               <h3>Email</h3>
-              <p>expert365@ukr.net</p>
+              <p>support@expert365.com</p>
             </div>
           </div>
 
@@ -701,14 +701,6 @@
           element.style.cursor = "pointer";
           element.style.userSelect = "none";
 
-          // Одинарный клик - предложение позвонить
-          element.addEventListener("click", function (e) {
-            e.preventDefault();
-            const phoneText = this.textContent.trim();
-            const cleanPhone = phoneText.replace(/\D/g, ""); // Удаляем все кроме цифр
-            window.location.href = `tel:+38${cleanPhone}`;
-          });
-
           // Двойной клик - копирование
           element.addEventListener("dblclick", function (e) {
             e.preventDefault();
@@ -721,12 +713,6 @@
         emailElements.forEach((element) => {
           element.style.cursor = "pointer";
           element.style.userSelect = "none";
-
-          // Одинарный клик - открытие почтового клиента
-          element.addEventListener("click", function (e) {
-            const emailText = this.textContent.trim();
-            window.location.href = `mailto:${emailText}`;
-          });
 
           // Двойной клик - копирование
           element.addEventListener("dblclick", function (e) {
@@ -746,18 +732,6 @@
 
           const text = span.textContent.trim();
           const isPhone = text.includes("(") || text.match(/\d/);
-
-          // Одинарный клик
-          item.addEventListener("click", function (e) {
-            if (e.target.tagName === "SPAN") return; // Пропускаем, если клик по span
-
-            if (isPhone) {
-              const cleanPhone = text.replace(/\D/g, "");
-              window.location.href = `tel:+38${cleanPhone}`;
-            } else {
-              window.location.href = `mailto:${text}`;
-            }
-          });
 
           // Двойной клик для копирования
           item.addEventListener("dblclick", function (e) {
