@@ -18,6 +18,8 @@
     <!-- 3. Адаптивність -->
     <link rel="stylesheet" href="styles/dialogs.css" />
     <!-- 4. Діалоги та компоненти -->
+    <link rel="stylesheet" href="styles/contacts.css" />
+    <script src="/contacts.js" defer></script>
   </head>
   <body>
     <nav class="navigation">
@@ -33,14 +35,22 @@
         </ul>
 
         <div class="navigation-contacts">
-          <div class="nav-contact-item">
+          <a
+            class="nav-contact-item contact-trigger"
+            data-contact="phone"
+            href="tel:+380938278066"
+          >
             <i class="fas fa-phone"></i>
-            <span>(093) 45-19-023</span>
-          </div>
-          <div class="nav-contact-item">
+            <span>(093) 82-78-066</span>
+          </a>
+          <a
+            class="nav-contact-item contact-trigger"
+            data-contact="email"
+            href="mailto:ocinka@expert365.com"
+          >
             <i class="fas fa-envelope"></i>
-            <span>support@expert365.com</span>
-          </div>
+            <span>ocinka@expert365.com</span>
+          </a>
         </div>
       </div>
     </nav>
@@ -382,7 +392,7 @@
                   FactoringPartners
                 </div>
               </a>
-              <a href="https://factoringp.ua/" target="_blank">
+              <a href="https://real-estate.biz.ua/main-page" target="_blank">
                 <div class="partner-card">
                   <img
                     src="assets/partners/OzymandiaLogo.png"
@@ -452,31 +462,41 @@
           <section class="contact-section" id="contacts">
             <h2>Наші контакти</h2>
 
-            <div class="contact-info">
-              <div class="info-item">
-                <i class="fas fa-phone"></i>
-                <div class="info-content">
-                  <h3>Телефон</h3>
-                  <p class="phone">(093) 45-19-023</p>
-                </div>
-              </div>
+            <div class="contact-cards">
+              <a
+                class="contact-card contact-card--phone contact-trigger"
+                data-contact="phone"
+                href="tel:+380938278066"
+              >
+                <span class="contact-card__label">
+                  <i class="fas fa-phone"></i> Телефон
+                </span>
+                <span class="contact-card__value">(093) 82-78-066</span>
+              </a>
 
-              <div class="info-item">
-                <i class="fas fa-envelope"></i>
-                <div class="info-content">
-                  <h3>Email</h3>
-                  <p class="email">support@expert365.com</p>
-                </div>
-              </div>
+              <a
+                class="contact-card contact-card--email contact-trigger"
+                data-contact="email"
+                href="mailto:ocinka@expert365.com"
+              >
+                <span class="contact-card__label">
+                  <i class="far fa-envelope"></i> Email
+                </span>
+                <span class="contact-card__value">ocinka<wbr />@expert365.com</span>
+              </a>
 
-              <div class="info-item">
-                <i class="fas fa-clock"></i>
-                <div class="info-content">
-                  <h3>Години роботи</h3>
-                  <p>Понеділок - П'ятниця: 9:00 - 18:00</p>
-                  <p>Субота: 10:00 - 15:00</p>
-                  <p>Неділя: вихідний</p>
-                </div>
+              <div class="contact-card contact-card--hours">
+                <span class="contact-card__label">
+                  <i class="far fa-clock"></i> Години роботи
+                </span>
+                <dl class="contact-hours">
+                  <dt>Пн–Пт</dt>
+                  <dd>9:00–18:00</dd>
+                  <dt>Субота</dt>
+                  <dd>10:00–15:00</dd>
+                  <dt>Неділя</dt>
+                  <dd class="is-off">вихідний</dd>
+                </dl>
               </div>
             </div>
           </section>
@@ -488,11 +508,6 @@
       </div>
     </div>
 
-    <div class="copy-notification" id="copyNotification">
-      <i class="fas fa-check-circle"></i>
-      <span>Скопійовано!</span>
-    </div>
-
     <dialog id="service-dialog">
       <div class="dialog-content">
         <div class="dialog-header">
@@ -501,21 +516,29 @@
         </div>
 
         <div class="contact-info-dialog">
-          <div class="contact-item-dialog phone">
+          <a
+            class="contact-item-dialog contact-trigger"
+            data-contact="phone"
+            href="tel:+380938278066"
+          >
             <i class="fas fa-phone"></i>
             <div class="info-content">
               <h3>Телефон для консультацій</h3>
-              <p class="phone-number">(093) 45-19-023</p>
+              <p>(093) 82-78-066</p>
             </div>
-          </div>
+          </a>
 
-          <div class="contact-item-dialog email">
+          <a
+            class="contact-item-dialog contact-trigger"
+            data-contact="email"
+            href="mailto:ocinka@expert365.com"
+          >
             <i class="fas fa-envelope"></i>
             <div class="info-content">
               <h3>Email</h3>
-              <p>support@expert365.com</p>
+              <p>ocinka@expert365.com</p>
             </div>
-          </div>
+          </a>
 
           <div class="contact-item-dialog remove-hover">
             <i class="fas fa-clock"></i>
@@ -535,7 +558,6 @@
         initNavigation();
         initServiceDialog();
         initScrollBehavior();
-        initContactInteractions(); // Новая функция
       });
 
       function initNavigation() {
